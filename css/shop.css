@@ -1,0 +1,28 @@
+.main_body{
+    margin: 0%;
+    display: flex;
+}
+
+.top_banner{
+    height: 5%;
+    width: auto;
+    background-color: aqua;
+}
+
+.left_side{
+    height: 5%;
+    width: auto;
+    background-color: rgb(255, 195, 127);
+}
+
+.right_side{
+    height: 5%;
+    width: auto;
+    background-color: blueviolet;
+}
+
+.bottom_banner{
+    height: 5%;
+    width: auto;
+    background-color: crimson;
+}
