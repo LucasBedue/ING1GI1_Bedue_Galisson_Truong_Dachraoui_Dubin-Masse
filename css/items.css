@@ -47,6 +47,19 @@
 .item_name{
     grid-row: 2;
     padding-left: 2vw;
-    padding-top: 2vh;
+    padding-top: 4vh;
     font-size: 2vh;
+}
+
+.item_desc{
+    font-size: 1.75vh;
+    padding-left: 2vw;
+    padding-top: 2vh;
+}
+
+.button{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
