@@ -78,6 +78,11 @@
     align-items: center;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    background-color: rgb(230, 189, 42);
+}
+button:hover{
+    background-color: rgb(141, 76, 11);
 }
 .button_container{
     display: flex;

@@ -6,6 +6,13 @@
     left: 1px;
 }
 
+.text_color_yellow{
+    color: rgb(227, 186, 19);
+}
+.text_color_black{
+    color: rgb(0, 0, 0);
+}
+
 .top_banner{
     height: 20vh;
     width: 100vw;
@@ -64,6 +71,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     font-size: 2vh;
+    color: black;
 }
 .top_menu_box1:hover{
     background-color: rgb(233, 134, 20);
@@ -145,6 +153,12 @@
     position: absolute;
     bottom: 3vh;
     margin-left: 5vw;
+    color: rgb(141, 76, 11);
+    
+}
+
+.central_left_top_bottom_text_box:hover{
+    background-color: rgb(230, 189, 42);
 }
 
 .shopping_cart{
@@ -158,11 +172,23 @@
     font-size: 2.5vh;
     margin-top: 3vh;
     margin-left: 1vw ;
+    
+    
+}
+.central_left_bottom_text_box1:hover{
+    background-color: rgb(233, 134, 20);
+}
+.central_left_bottom_text_box2:hover{
+    background-color: rgb(118, 114, 233);
+}
+.central_left_bottom_text_box3:hover{
+    background-color: rgb(58, 202, 92);
 }
 
 .central_left_bottom_text_box{
     position: relative;
     padding: 1vh;
+    color: black;
     
 }
 
@@ -173,6 +199,7 @@
     width: 15vw;
     display: flex;
     font-size: 2vh;
+    
 }
 
 
@@ -226,3 +253,10 @@ background: linear-gradient(180deg, rgba(26,50,117,1) 0%, rgba(3,3,41,1) 96%);
     right: 2vw;
     padding-left: 1vh;
 }
+
+a:link{
+    text-decoration: none;
+}
+
+
+
