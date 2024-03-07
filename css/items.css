@@ -1,15 +1,23 @@
 .top_menu_box1{
     grid-column: 1;
-    background-color: rgb(242, 165, 41);
+    background-color: rgb(233, 134, 20);
 }
 
 
-
+.right_side{
+    height: 70vh;
+    width: 80vw;
+    background: rgb(239,238,244);
+    background: linear-gradient(180deg, rgb(233, 134, 20) 0%, rgb(250, 253, 255) 87%);
+    
+    position: absolute;
+    right: 1px;
+}
 
 .right_bottom_container{
     display: grid;
     width: auto;
-    padding-top: 2vh;
+    padding-top: 4vh;
 }
 
 .item_container{
@@ -57,9 +65,37 @@
     padding-top: 2vh;
 }
 
+.item_stock{
+    font-size: 2vh;
+    padding-left: 2vw;
+    padding-top: 2vh;
+}
+
 .button{
     width: 50%;
+    font-size: 110%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15vh;
+}
+
+.button2{
+    font-size: 150%;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.button_container2{
+    position: absolute;
+    bottom: 3vh;
+    right: 4vw;
 }
