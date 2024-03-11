@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>L'Echoppe de Doran - Connexion</title>
 		<link rel="stylesheet" href="shop.css" />
+		<link rel="stylesheet" href="Connexion.css" />
 	</head>
 
 	<body class="main_body">
@@ -119,9 +120,48 @@
 				</div>
 			</div>
 			<div class="right_side">
-				<div class="right_top_text">
-					Bienvenue dans l'échoppe de Doran
+				<div class="right_top_text">Connexion</div>
+				<div class="right_container">
+					<div class="login">
+						<!--	Login form	-->
+						<form method="post" action="verificationConnexion.php">
+							<table class="login2">
+								<tr>
+									<td class="login_text">Email :</td>
+									<td>
+										<input
+											type="text"
+											name="mail"
+											id="mail"
+											required
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td class="login_text">Mot de passe :</td>
+									<td>
+										<input
+											type="password"
+											name="mdp"
+											id="mdp"
+											required
+										/>
+									</td>
+								</tr>
+							</table>
+							<br />
+							<div class="input">
+								<input class="button" type="submit" value="Se connecter" />
+							</div>
+						</form>
+					</div>
+					
 				</div>
+
+                    <div class="textbox">Pas encore de compte ?  </div>
+					
+                    <a href="Creation.html" class="textbox2">Créez un compte ici</a>			<!--	Link to account creation page	-->
+                
 			</div>
 		</div>
 

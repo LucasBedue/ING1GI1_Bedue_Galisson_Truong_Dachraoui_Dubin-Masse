@@ -213,16 +213,22 @@
 .right_side{
     height: 70vh;
     width: 80vw;
-    background: rgb(161, 204, 238);
-   
+
+    background: rgb(239,238,244);
+    background: linear-gradient(180deg, rgb(114, 183, 233) 0%, rgb(250, 253, 255) 87%);
     position: absolute;
     right: 1px;
 }
 
 .right_top_text{
-    padding-left: 2vw;
-    padding-top: 3vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    padding-top: 2.5vh;
+    padding-bottom: 1vh;
     font-size: 4vh;
+    border-bottom: solid black ;
+    border-width: thin;
+    
 }
 
 
@@ -256,6 +262,88 @@ background: linear-gradient(180deg, rgba(26,50,117,1) 0%, rgba(3,3,41,1) 96%);
 
 a:link{
     text-decoration: none;
+}
+
+.right_bottom_container{
+    display: grid;
+    width: auto;
+    padding-top: 2vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+
+.item_pic{
+    width: 5vw;
+    
+}
+
+.col{
+    padding-left: 10vh;
+    font-weight: lighter;
+    
+}
+
+.right_bottom_container{
+    display: grid;
+    width: auto;
+    padding-top: 2vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+
+
+.item_pic{
+    width: 5vw;
+    
+}
+
+.col{
+    padding-left: 12vh;
+    font-weight: lighter;
+    
+}
+
+
+.button{
+    width: 120%;
+    font-size: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    background-color: rgba(33,61,150,1);
+    color: rgb(227, 186, 19);
+    padding: 0.5vh;
+}
+.button:hover{
+    color: rgba(33,61,150,1);
+    background-color: rgb(227, 186, 19);
+}
+
+.button2{
+    width: 120%;
+    font-size: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    background-color: rgb(227, 186, 19);
+    color: rgba(33,61,150,1);
+    padding: 0.5vh;
+}
+.button2:hover{
+    color: rgb(227, 186, 19);
+    background-color: rgba(33,61,150,1);
+}
+
+.button_container2{
+    position: absolute;
+    bottom: 3vh;
+    right: 4vw;
 }
 
 
