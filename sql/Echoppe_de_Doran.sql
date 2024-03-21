@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `item` (
 -- Insérer les données dans la table `item`
 INSERT INTO `item` (`nom`, `prix`, `stock`, `categorie`, `stats_pv`, `stats_ad`, `stats_ap`,`image`) VALUES
 ('Titanic Hydra', 3300, 10, 'Tank', 550, 50, 0,'Titanic_Hydra_item_HD.png'),
-('Nashor \'Tooth', 3000, 10, 'Ap', 0, 0, 90,'Nashors_Tooth_item_HD.png'),
+('Nashors \'Tooth', 3000, 10, 'Ap', 0, 0, 90,'Nashors_Tooth_item_HD.png'),
 ('Horizon Focus', 2700, 10, 'Ap', 0, 0, 90,'Horizon_Focus_item_HD.png'),
 ('Jak \'Sho', 3200, 10, 'Tank', 300, 0, 0,'Jak2C_The_Protean_item_HD.png'),
 ('Morellonomicon', 2200, 10, 'Ap', 0, 0, 90,'Morellonomicon_item_HD.png'),
