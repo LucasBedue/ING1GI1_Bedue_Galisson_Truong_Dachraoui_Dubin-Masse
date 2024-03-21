@@ -124,7 +124,7 @@
 				<div class="right_container">
 					<div class="login">
 						<!--	Login form	-->
-						<form method="post" action="verificationConnexion.php">
+						<form method="post" action="../php/verificationConnexion.php">
 							<table class="login2">
 								<tr>
 									<td class="login_text">Email :</td>
