@@ -125,105 +125,72 @@
 				<div class="right_top_text">Items de dégats Magique</div>
 				<table class="right_bottom_container">
 					<tr class="row">
-						<th class="col">Image</th>
+						<th class="col"></th>
 						<th class="col">Nom</th>
-						<th class="col">Effet</th>
+						<th class="col">PV</th>
+						<th class="col">AP</th>
+						<th class="col">AD</th>
 						<th class="col">Stock</th>
 						<th class="col">Prix</th>
 					</tr>
-					<tr class="row">
-						<th class="col">
-							<img
-								class="item_pic"
-								src="./../img/Morellonomicon_item_HD.png"
-							/>
-						</th>
-						<th class="col">Morellonomicon</th>
-						<th class="col">90 AP</th>
-						<th class="col">50</th>
-						<th class="col">60 $</th>
-						<th class="col">
-							<button class="button" type="button">
-								Ajouter
-							</button>
-						</th>
-					</tr>
+					<?php
+						// Informations de connexion à la base de données
+						$serveur = "localhost"; 
+						$utilisateur = "root"; 
+						$motDePasse = ""; 
+						$baseDeDonnees = "Echoppe_de_doran"; 
 
-					<tr class="row">
-						<th class="col">
-							<img
-								class="item_pic"
-								src="./../img/Nashors_Tooth_item_HD.png"
-							/>
-						</th>
-						<th class="col">Nashor's Tooth</th>
-						<th class="col">90 AP</th>
-						<th class="col">50</th>
-						<th class="col">60 $</th>
-						<th class="col">
-							<button class="button" type="button">
-								Ajouter
-							</button>
-						</th>
-					</tr>
-					<tr class="row">
-						<th class="col">
-							<img
-								class="item_pic"
-								src="./../img/Rabadons_Deathcap_item_HD.png"
-							/>
-						</th>
-						<th class="col">Rabadon's Deathcap</th>
-						<th class="col">140 AP</th>
-						<th class="col">50</th>
-						<th class="col">60 $</th>
-						<th class="col">
-							<button class="button" type="button">
-								Ajouter
-							</button>
-						</th>
-					</tr>
-					<tr class="row">
-						<th class="col">
-							<img
-								class="item_pic"
-								src="./../img/Void_Staff_item_HD.png"
-							/>
-						</th>
-						<th class="col">Void Staff</th>
-						<th class="col">80 AP</th>
-						<th class="col">50</th>
-						<th class="col">60 $</th>
-						<th class="col">
-							<button class="button" type="button">
-								Ajouter
-							</button>
-						</th>
-					</tr>
-					<tr class="row">
-						<th class="col">
-							<img
-								class="item_pic"
-								src="./../img/Horizon_Focus_item_HD.png"
-							/>
-						</th>
-						<th class="col">Horizon Focus</th>
-						<th class="col">90 AP</th>
-						<th class="col">50</th>
-						<th class="col">60 $</th>
-						<th class="col">
-							<button class="button" type="button">
-								Ajouter
-							</button>
-						</th>
-					</tr>
+						// Connexion à la base de données
+						$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+
+						// Vérification de la connexion
+						if ($connexion->connect_error) {
+							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+						}
+
+						// Requête SQL pour récupérer les items magiques
+						$sql = "SELECT * FROM item WHERE categorie = 'Ap'";
+						$resultat = $connexion->query($sql);
+
+						// Vérification s'il y a des résultats
+						if ($resultat->num_rows > 0) {
+							// Parcourir les lignes de résultat
+							while ($row = $resultat->fetch_assoc()) {
+								// Accéder aux données récupérées
+								$nom = $row["nom"];
+								$stats_pv = $row["stats_pv"];
+								$stats_ap = $row["stats_ap"];
+								$stats_ad = $row["stats_ad"];
+								$stock = $row["stock"];
+								$prix = $row["prix"];
+								$image=$row["image"];
+								// Affichage de chaque item dans une ligne du tableau
+								echo "<tr class='row'>";
+								echo "<td class='col'><img class='item_pic' src='./../img/$image' /></td>";
+								echo "<td class='col'>$nom</td>";
+								echo "<td class='col'>$stats_pv PV</td>";
+								echo "<td class='col'>$stats_ap AP</td>";
+								echo "<td class='col'>$stats_ad AD</td>";
+								echo "<td class='col'>$stock</td>";
+								echo "<td class='col'>$prix $</td>";
+								echo "<td class='col'><button class='button' type='button'>Ajouter</button></td>";
+								echo "</tr>";
+							}
+						} else {
+							echo "Aucun résultat trouvé.";
+						}
+
+						// Fermer la connexion à la base de données
+						$connexion->close();
+						?>
+
 				</table>
 				
 				<div class="button_container2">
 					<button class="button2" type="button">Commander</button>
 				</div>
 			
-		</div>
+			</div>
 		</div>
 	
 
@@ -236,6 +203,5 @@
 				Galisson - Audrey Truong
 			</div>
 		</div>
-		
 	</body>
 </php>
