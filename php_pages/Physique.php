@@ -12,7 +12,7 @@
 		<div class="top_banner">
 			<img src="./../img/poro.png" class="poroicon" />
 			<a
-				href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Connexion.php"
+				href="./Connexion.php"
 			>
 				<div class="top_left_text">Se connecter</div>
 			</a>
@@ -21,7 +21,7 @@
 				<div class="top_menu">
 					<div class="top_menu_box top_menu_box1">
 						<a
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Physique.php"
+							href="./Physique.php"
 						>
 							<div class="top_menu_box top_menu_box1">
 								Physique
@@ -30,7 +30,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box2">
 						<a
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Magique.php"
+							href="./Magique.php"
 						>
 							<div class="top_menu_box top_menu_box2">
 								Magique
@@ -39,7 +39,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box3">
 						<a
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Tank.php"
+							href="./Tank.php"
 						>
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
@@ -64,7 +64,7 @@
 				<div class="central_left_top_box">
 					L'Echoppe de Doran
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Panier.php"
+						href="./Panier.php"
 					>
 						<div class="central_left_top_bottom_text_box">
 							Votre panier
@@ -77,7 +77,7 @@
 				</div>
 				<div class="central_left_bottom_box">
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Physique.php"
+						href="./Physique.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box1"
@@ -87,7 +87,7 @@
 					</a>
 
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Magique.php"
+						href="./Magique.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box2"
@@ -97,7 +97,7 @@
 					</a>
 
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Tank.php"
+						href="./Tank.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box3"
@@ -113,7 +113,7 @@
 						<div class="spacer">|</div>
 						<a
 							class="text_color_black"
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Contact.php"
+							href="./Contact.php"
 							>Nous contacter</a
 						>
 					</div>
