@@ -11,7 +11,7 @@
 		<div class="top_banner">
 			<img src="../img/poro.png" class="poroicon" />
 			<a
-				href="/Connexion.php"
+				href="./Connexion.php"
 			>
 				<div class="top_left_text">Se connecter</div>
 			</a>
@@ -20,7 +20,7 @@
 				<div class="top_menu">
 					<div class="top_menu_box top_menu_box1">
 						<a
-							href="/Physique.php"
+							href="./Physique.php"
 						>
 							<div class="top_menu_box top_menu_box1">
 								Physique
@@ -29,7 +29,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box2">
 						<a
-							href="/Magique.php"
+							href="./Magique.php"
 						>
 							<div class="top_menu_box top_menu_box2">
 								Magique
@@ -38,7 +38,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box3">
 						<a
-							href="/Tank.php"
+							href="./Tank.php"
 						>
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
@@ -51,7 +51,7 @@
 				<div class="spacer">|</div>
 				<a
 					class="text_color_yellow"
-					href="/Contact.php"
+					href="./Contact.php"
 					>Nous contacter</a
 				>
 			</div>

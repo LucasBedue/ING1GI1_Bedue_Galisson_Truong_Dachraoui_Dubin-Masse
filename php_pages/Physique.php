@@ -52,7 +52,7 @@
 				<div class="spacer">|</div>
 				<a
 					class="text_color_yellow"
-					href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/cssphp_pages/Contact.php"
+					href="./Contact.php"
 					>Nous contacter</a
 				>
 			</div>
