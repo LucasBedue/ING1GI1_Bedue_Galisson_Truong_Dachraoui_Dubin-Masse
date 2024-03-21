@@ -1,0 +1,2 @@
+bedue;lucas;0001-01-01;bedue@gmail.com;1234;Client;
+jean;luis;2015-06-10;jean.luis@gmail.com;1234;Admin;
