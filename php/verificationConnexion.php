@@ -4,7 +4,7 @@
      $mdp = $_POST['mdp'];
      
 
-     $file = fopen("../account_informations.txt", "r");
+     $file = fopen("../account_informations/accounts.txt", "r");
 
      while(!feof($file)) {                                      
         $line = fgets($file);                                       //select a line then split it into several parts
@@ -21,18 +21,18 @@
             $role = $role_file;
             $_SESSION['role'] = $role;
             $_SESSION['mail'] = $mail;
-            if ($role == "Jeune") {                                 //sends the user to his homepage
-                header("Location: jeunespage.php");
+            if ($role == "Client") {                                 //sends the user to his homepage
+                header("Location: ../php_pages/index.php");
                 exit();
             } else {
-                header("Location: Adminpage.php");
+                header("Location: ../php_pages/index.php");
                 exit();
             }
         } 
     }
 
     fclose($file);
-    header("Location: login.php");                                  //bring back to login if pb during connection
+    header("Location: ../php_pages/Connexion.php");                                  //bring back to login if pb during connection
     exit();
 
 ?>
