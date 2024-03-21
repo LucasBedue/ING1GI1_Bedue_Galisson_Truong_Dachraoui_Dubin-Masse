@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE php>
+<php>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>L'Echoppe de Doran - Connexion</title>
-		<link rel="stylesheet" href="./shop.css" />
-		<link rel="stylesheet" href="./Creation.css" />
+		<link rel="stylesheet" href="../css/shop.css" />
 		<link rel="stylesheet" href="./Connexion.css" />
 	</head>
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="../img/poro.png" class="poroicon" />
+			<img src="./../img/poro.png" class="poroicon" />
 			<a
-				href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Connexion.html"
+				href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Connexion.php"
 			>
 				<div class="top_left_text">Se connecter</div>
 			</a>
@@ -22,7 +21,7 @@
 				<div class="top_menu">
 					<div class="top_menu_box top_menu_box1">
 						<a
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Physique.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Physique.php"
 						>
 							<div class="top_menu_box top_menu_box1">
 								Physique
@@ -31,7 +30,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box2">
 						<a
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Magique.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Magique.php"
 						>
 							<div class="top_menu_box top_menu_box2">
 								Magique
@@ -40,7 +39,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box3">
 						<a
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Tank.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Tank.php"
 						>
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
@@ -49,11 +48,11 @@
 			</div>
 
 			<div class="top_right_text">
-				<a class="text_color_yellow" href="./index.html">Accueil</a>
+				<a class="text_color_yellow" href="./index.php">Accueil</a>
 				<div class="spacer">|</div>
 				<a
 					class="text_color_yellow"
-					href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Contact.html"
+					href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Contact.php"
 					>Nous contacter</a
 				>
 			</div>
@@ -65,7 +64,7 @@
 				<div class="central_left_top_box">
 					L'Echoppe de Doran
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Panier.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Panier.php"
 					>
 						<div class="central_left_top_bottom_text_box">
 							Votre panier
@@ -78,7 +77,7 @@
 				</div>
 				<div class="central_left_bottom_box">
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Physique.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Physique.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box1"
@@ -88,7 +87,7 @@
 					</a>
 
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Magique.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Magique.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box2"
@@ -98,7 +97,7 @@
 					</a>
 
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Tank.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Tank.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box3"
@@ -108,13 +107,13 @@
 					</a>
 
 					<div class="central_left_bottom_bottom_text_box">
-						<a class="text_color_black" href="./index.html"
+						<a class="text_color_black" href="./index.php"
 							>Accueil</a
 						>
 						<div class="spacer">|</div>
 						<a
 							class="text_color_black"
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Contact.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Contact.php"
 							>Nous contacter</a
 						>
 					</div>
@@ -125,42 +124,8 @@
 				<div class="right_container">
 					<div class="login">
 						<!--	Login form	-->
-						<form method="post" action="./verificationConnexion.php">
+						<form method="post" action="verificationConnexion.php">
 							<table class="login2">
-								<tr>
-									<td class="login_text">Prénom :</td>
-									<td>
-										<input
-											type="text"
-											name="FirstName"
-											id="Fname"
-											required
-										/>
-									</td>
-									<td>
-									</td>
-									<td class="login_text">Nom de famille :</td>
-									<td>
-										<input
-											type="text"
-											name="LastName"
-											id="Lname"
-											required
-										/>
-									</td>
-								</tr>
-								<tr>
-									<td class="login_text">Nom de l'entreprise :</td>
-									<td>
-										<input
-											type="text"
-											name="entreprise"
-											id="entreprise"
-											required
-										/>
-									</td>
-									
-								</tr>
 								<tr>
 									<td class="login_text">Email :</td>
 									<td>
@@ -171,7 +136,6 @@
 											required
 										/>
 									</td>
-									
 								</tr>
 								<tr>
 									<td class="login_text">Mot de passe :</td>
@@ -184,74 +148,19 @@
 										/>
 									</td>
 								</tr>
-								<tr>
-									<td class="login_text">Numéro de téléphone :</td>
-									<td>
-										<input
-											type="text"
-											name="telephone"
-											id="telephone"
-											required
-										/>
-									</td>
-									
-								</tr>
-								<tr>
-									<td class="login_text">Adresse :</td>
-									<td>
-										<input
-											type="text"
-											name="adress"
-											id="adress"
-											required
-										/>
-									</td>
-									<td>
-									</td>
-									<td class="login_text">Code Postal :</td>
-									<td>
-										<input
-											type="text"
-											name="CodePostal"
-											id="CodePostal"
-											required
-										/>
-									</td>
-									
-								</tr>
-								<tr>
-									<td class="login_text">Ville :</td>
-									<td>
-										<input
-											type="text"
-											name="ville"
-											id="ville"
-											required
-										/>
-									</td>
-									<td>
-									</td>
-									<td class="login_text">Pays :</td>
-									<td>
-										<input
-											type="text"
-											name="pays"
-											id="pays"
-											required
-										/>
-									</td>
-									
-								</tr>
 							</table>
 							<br />
 							<div class="input">
-								<input class="button" type="submit" value="Créer le compte" />
+								<input class="button" type="submit" value="Se connecter" />
 							</div>
 						</form>
 					</div>
 					
 				</div>
 
+                    <div class="textbox">Pas encore de compte ?  </div>
+					
+                    <a href="./Creation.php" class="textbox2">Créez un compte ici</a>			<!--	Link to account creation page	-->
                 
 			</div>
 		</div>
@@ -266,4 +175,4 @@
 			</div>
 		</div>
 	</body>
-</html>
+</php>

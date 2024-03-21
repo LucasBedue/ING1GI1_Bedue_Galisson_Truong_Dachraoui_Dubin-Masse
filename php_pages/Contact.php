@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE php>
+<php>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>L'Echoppe de Doran</title>
-		<link rel="stylesheet" href="./shop.css" />
+		<title>L'Echoppe de Doran - Contact</title>
+		<link rel="stylesheet" href="../css/shop.css" />
 	</head>
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="../img/poro.png" class="poroicon" />
+			<img src="./../img/poro.png" class="poroicon" />
 			<a
-				href="/ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Connexion.html"
+				href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Connexion.php"
 			>
 				<div class="top_left_text">Se connecter</div>
 			</a>
@@ -20,7 +20,7 @@
 				<div class="top_menu">
 					<div class="top_menu_box top_menu_box1">
 						<a
-							href="/ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Physique.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Physique.php"
 						>
 							<div class="top_menu_box top_menu_box1">
 								Physique
@@ -29,7 +29,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box2">
 						<a
-							href="/ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Magique.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Magique.php"
 						>
 							<div class="top_menu_box top_menu_box2">
 								Magique
@@ -38,7 +38,7 @@
 					</div>
 					<div class="top_menu_box top_menu_box3">
 						<a
-							href="/ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Tank.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Tank.php"
 						>
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
@@ -47,11 +47,11 @@
 			</div>
 
 			<div class="top_right_text">
-				<a class="text_color_yellow" href="index.html">Accueil</a>
+				<a class="text_color_yellow" href="./index.php">Accueil</a>
 				<div class="spacer">|</div>
 				<a
 					class="text_color_yellow"
-					href="/ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Contact.html"
+					href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Contact.php"
 					>Nous contacter</a
 				>
 			</div>
@@ -63,7 +63,7 @@
 				<div class="central_left_top_box">
 					L'Echoppe de Doran
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Panier.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Panier.php"
 					>
 						<div class="central_left_top_bottom_text_box">
 							Votre panier
@@ -76,7 +76,7 @@
 				</div>
 				<div class="central_left_bottom_box">
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Physique.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Physique.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box1"
@@ -86,7 +86,7 @@
 					</a>
 
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Magique.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Magique.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box2"
@@ -96,7 +96,7 @@
 					</a>
 
 					<a
-						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Tank.html"
+						href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Tank.php"
 					>
 						<div
 							class="central_left_bottom_text_box central_left_bottom_text_box3"
@@ -106,13 +106,13 @@
 					</a>
 
 					<div class="central_left_bottom_bottom_text_box">
-						<a class="text_color_black" href="./index.html"
+						<a class="text_color_black" href="./index.php"
 							>Accueil</a
 						>
 						<div class="spacer">|</div>
 						<a
 							class="text_color_black"
-							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/css/Contact.html"
+							href="./ING1GI1_Bedue_Galisson_Truong_Dachraoui_Dubin-Masse/php_pages/Contact.php"
 							>Nous contacter</a
 						>
 					</div>
@@ -120,7 +120,7 @@
 			</div>
 			<div class="right_side">
 				<div class="right_top_text">
-					Bienvenue dans l'échoppe de Doran
+					Nous contacter
 				</div>
 			</div>
 		</div>
@@ -135,4 +135,4 @@
 			</div>
 		</div>
 	</body>
-</html>
+</php>
