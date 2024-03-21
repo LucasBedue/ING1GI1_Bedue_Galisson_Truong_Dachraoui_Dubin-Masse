@@ -1,5 +1,3 @@
--- Script SQL pour créer la structure de la base de données
-
 -- Supprimer la base de données si elle existe déjà
 DROP DATABASE IF EXISTS `Echoppe_De_Doran`;
 
@@ -19,6 +17,6 @@ CREATE TABLE IF NOT EXISTS `item` (
   `stats_pv` int NOT NULL,
   `stats_ad` int NOT NULL,
   `stats_ap` int NOT NULL,
+  `image` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 );
-
