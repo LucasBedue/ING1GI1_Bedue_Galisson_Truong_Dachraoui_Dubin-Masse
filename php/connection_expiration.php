@@ -16,7 +16,7 @@ if (isset($_SESSION['last_activity'])) {
         session_destroy();
         
         // Redirects the user to the logout page
-        header("Location: logout.php");
+        header("Location: deconnexion.php");
         exit;
     }
 }
@@ -27,7 +27,7 @@ $_SESSION['last_activity'] = time();
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== "Client") {
     echo '<script>alert("Veuillez vous connecter pour accéder à cette page.");</script>';
-    echo '<script>window.location.href = "../css/Connexion.html";</script>';
+    echo '<script>window.location.href = "../php_pages/Connexion.php";</script>';
     exit();
 }
 

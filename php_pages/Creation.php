@@ -308,8 +308,6 @@
 				Galisson - Audrey Truong
 			</div>
 		</div>
-		<?php
-			require("../php/connection_expiration.php");
-		?>
+		
 	</body>
 </php>
