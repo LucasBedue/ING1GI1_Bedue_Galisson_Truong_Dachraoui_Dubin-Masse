@@ -25,19 +25,6 @@ if ($result_item->num_rows > 0) {
     echo "0 résultats pour les items";
 }
 
-// Récupérer les données de la table `user`
-$sql_user = "SELECT * FROM user";
-$result_user = $conn->query($sql_user);
-
-if ($result_user->num_rows > 0) {
-    // Afficher les données de chaque utilisateur
-    while($row_user = $result_user->fetch_assoc()) {
-        echo "Nom: " . $row_user["Nom"]. " - Prénom: " . $row_user["Prenom"]. " - Age: " . $row_user["Age"]. "<br>";
-    }
-} else {
-    echo "0 résultats pour les utilisateurs";
-}
-
 // Fermer la connexion
 $conn->close();
 ?>

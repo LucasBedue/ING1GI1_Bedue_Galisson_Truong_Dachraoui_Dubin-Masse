@@ -47,25 +47,6 @@ if ($select) {
 } else {
     exit('Error reading data: ' . mysqli_error($conn));
 }
-$select = mysqli_query($conn, 'SELECT * FROM user');
-if ($select) {
-    // Afficher les données au format HTML
-    echo "<table>";
-    while ($row = $select->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>ID : " . $row["id"] . "</td>";
-        echo "<td>Nom : " . $row["Nom"] . "</td>";
-        echo "<td>Prénom : " . $row["Prenom"] . "</td>";
-        echo "<td>Age : " . $row["Age"] . "</td>";
-        echo "<td>Email : " . $row["Email"] . "</td>";
-        echo "<td>Mot de passe : " . $row["Mot de passe"] . "</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    exit('Error reading data: ' . mysqli_error($conn));
-}
-
 
 // Close connection
 mysqli_close($conn);
