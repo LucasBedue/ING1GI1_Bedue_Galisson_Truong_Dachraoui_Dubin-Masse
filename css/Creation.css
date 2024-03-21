@@ -1,6 +1,12 @@
 
-input {
+.input_box {
     border: none;
     border-bottom: 1px solid black;
     background-color: rgba(97, 123, 208, 0.439) ;
+    height: 2.5vh;
+}
+
+.creation_text{
+    padding-right: 3vw;
+    font-size: 2vh;
 }

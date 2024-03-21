@@ -4,6 +4,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute;
     left: 1px;
+    width: 100vw;
 }
 
 .text_color_yellow{

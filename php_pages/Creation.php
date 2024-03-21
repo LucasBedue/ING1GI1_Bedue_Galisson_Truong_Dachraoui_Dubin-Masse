@@ -5,8 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>L'Echoppe de Doran - Connexion</title>
 		<link rel="stylesheet" href="../css/shop.css" />
-		<link rel="stylesheet" href="../css/Creation.css" />
+		
 		<link rel="stylesheet" href="../css/Connexion.css" />
+		<link rel="stylesheet" href="../css/Creation.css" />
 	</head>
 
 	<body class="main_body">
@@ -121,16 +122,19 @@
 				</div>
 			</div>
 			<div class="right_side">
-				<div class="right_top_text">Connexion</div>
+				<div class="right_top_text">Création de compte</div>
 				<div class="right_container">
 					<div class="login">
 						<!--	Login form	-->
 						<form method="post" action="./verificationConnexion.php">
 							<table class="login2">
 								<tr>
-									<td class="login_text">Prénom :</td>
+									<td>
+										<div class="creation_text">Prénom :</div>
+									</td>
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="FirstName"
 											id="Fname"
@@ -139,9 +143,13 @@
 									</td>
 									<td>
 									</td>
-									<td class="login_text">Nom de famille :</td>
+									<td>
+										<div class="creation_text">Nom de famille :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="LastName"
 											id="Lname"
@@ -150,9 +158,13 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="login_text">Nom de l'entreprise :</td>
+								<td>
+										<div class="creation_text">Nom de l'entreprise :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="entreprise"
 											id="entreprise"
@@ -162,21 +174,29 @@
 									
 								</tr>
 								<tr>
-									<td class="login_text">Email :</td>
+								<td>
+										<div class="creation_text">Email :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="mail"
 											id="mail"
 											required
 										/>
 									</td>
+									<td>
+										<div'>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+									</td>
+									<td>
+										<div class="creation_text">Mot de passe </div>
+									</td>
 									
-								</tr>
-								<tr>
-									<td class="login_text">Mot de passe :</td>
 									<td>
 										<input
+										class = "input_box"
 											type="password"
 											name="mdp"
 											id="mdp"
@@ -185,9 +205,16 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="login_text">Numéro de téléphone :</td>
+								
+								</tr>
+								<tr>
+								<td>
+										<div class="creation_text">Numéro de téléphone :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="telephone"
 											id="telephone"
@@ -197,9 +224,13 @@
 									
 								</tr>
 								<tr>
-									<td class="login_text">Adresse :</td>
+								<td>
+										<div class="creation_text">Adresse :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="adress"
 											id="adress"
@@ -208,9 +239,13 @@
 									</td>
 									<td>
 									</td>
-									<td class="login_text">Code Postal :</td>
+									<td>
+										<div class="creation_text">Code Postal :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="CodePostal"
 											id="CodePostal"
@@ -220,9 +255,13 @@
 									
 								</tr>
 								<tr>
-									<td class="login_text">Ville :</td>
+								<td>
+										<div class="creation_text">Ville :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="ville"
 											id="ville"
@@ -231,9 +270,13 @@
 									</td>
 									<td>
 									</td>
-									<td class="login_text">Pays :</td>
+									<td>
+										<div class="creation_text">Pays :</div>
+									</td>
+									
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="pays"
 											id="pays"
