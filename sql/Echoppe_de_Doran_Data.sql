@@ -22,13 +22,3 @@ CREATE TABLE IF NOT EXISTS `item` (
   PRIMARY KEY (`id`)
 );
 
--- Créer la structure de la table `user`
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `Nom` varchar(50) NOT NULL,
-  `Prenom` varchar(50) NOT NULL,
-  `Age` int NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Mot_de_passe` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-);
