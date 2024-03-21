@@ -1,5 +1,5 @@
 <?php
-                                //Get all value of "creation"
+//Get all value of "creation"
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $mail = $_POST['mail'];
@@ -18,7 +18,7 @@ if (strpos($mdp, ';') !== false) {
     exit;
 }
 
-$fichier = fopen('infopers.txt', 'r+');
+$fichier = fopen('../account_informations/accounts.txt', 'r+');
 
 
 while(!feof($fichier)) {                                        //check if the address is not already in use
@@ -33,15 +33,13 @@ while(!feof($fichier)) {                                        //check if the a
     }
 }
 
-$fichier = fopen('infopers.txt', 'a');
+$fichier = fopen('../account_informations/accounts.txt', 'a');
 
 fwrite($fichier, $nom . ';' . $prenom . ';' . $date_naissance . ';' . $mail . ';' . $mdp . ';' . $role . ";\n");    //writes personal information to the file
 fclose($fichier);
 
-$f = fopen('./../InformationsJeunes/'.$mail,'a+');
-
 fclose($f);
-header('Location: login.php');
+header('Location: ../php_pages/Connexion.php');
 
 ?>
 
