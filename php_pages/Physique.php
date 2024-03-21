@@ -122,14 +122,14 @@
 			<div class="right_side">
 				<div class="right_top_text">Items de dégats Physiques</div>
 				<table class="right_bottom_container">				
-					<tr class="row">
-						<th class="col"></th>
-						<th class="col">Nom</th>
-						<th class="col">PV</th>
-						<th class="col">AP</th>
-						<th class="col">AD</th>
-						<th class="col">Stock</th>
-						<th class="col">Prix</th>
+				<tr>
+						<td></td>
+						<td><div class="col">Nom</div></td>
+						<td><div class="col">HP</div></td>
+						<td><div class="col">AP</div></td>
+						<td><div class="col">AD</div></td>
+						<td><div class="col">Stock</div></td>
+						<td><div class="col">Prix</div></td>
 					</tr>
 					<?php
 						// Informations de connexion à la base de données
@@ -163,15 +163,15 @@
 								$prix = $row["prix"];
 								$image=$row["image"];
 								// Affichage de chaque item dans une ligne du tableau
-								echo "<tr class='row'>";
-								echo "<td class='col'><img class='item_pic' src='./../img/$image' /></td>";
-								echo "<td class='col'>$nom</td>";
-								echo "<td class='col'>$stats_pv PV</td>";
-								echo "<td class='col'>$stats_ap AP</td>";
-								echo "<td class='col'>$stats_ad AD</td>";
-								echo "<td class='col'>$stock</td>";
-								echo "<td class='col'>$prix $</td>";
-								echo "<td class='col'><button class='button' type='button'>Ajouter</button></td>";
+								echo "<tr>";
+								echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
+								echo "<td><div class='col'>$nom</div></td>";
+								echo "<td><div class='col'>$stats_pv HP</div></td>";
+								echo "<td><div class='col'>$stats_ap AP</div></td>";
+								echo "<td><div class='col'>$stats_ad AD</div></td>";
+								echo "<td><div class='col'>$stock</div></td>";
+								echo "<td><div class='col'>$prix $</div></td>";
+								echo "<td><div class='col'><button class='button' type='button'>Ajouter</button></div></td>";
 								echo "</tr>";
 							}
 						} else {
@@ -181,11 +181,24 @@
 						// Fermer la connexion à la base de données
 						$connexion->close();
 						?>
-						</table>
 
-		<div class="button_container2">
+					<tr>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>
+					<div class="button_container2">
 						<button class="button2" type="button">Commander</button>
 					</div>
+					<td>
+				</tr>
+						</table>
+
+		
 				</div>
 			</div>
 		</div>

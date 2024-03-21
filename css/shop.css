@@ -280,7 +280,7 @@ a:link{
 }
 
 .col{
-    padding-left: 10vh;
+    
     font-weight: lighter;
     
 }
@@ -307,6 +307,7 @@ a:link{
 }
 
 
+
 .button{
     width: 120%;
     font-size: 130%;
@@ -325,7 +326,7 @@ a:link{
 }
 
 .button2{
-    width: 120%;
+    width: 100%;
     font-size: 130%;
     display: flex;
     align-items: center;
@@ -341,11 +342,7 @@ a:link{
     background-color: rgba(33,61,150,1);
 }
 
-.button_container2{
-    position: absolute;
-    bottom: 3vh;
-    right: 4vw;
-}
+
 
 
 
