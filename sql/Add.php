@@ -84,13 +84,6 @@
         $stmt->bind_param("siisiiis", $nom, $prix, $stock, $categorie, $stats_pv, $stats_ad, $stats_ap, $image_name);
         $result = $stmt->execute();
 
-        if ($result) {
-            echo "<p>L'élément a été ajouté avec succès.</p>";
-            echo "Catégorie récupérée : " . $categorie; 
-
-        } else {
-            echo "<p>Une erreur s'est produite lors de l'ajout de l'élément: " . $conn->error . "</p>";
-        }
 
         // Fermer la connexion
         $stmt->close();
