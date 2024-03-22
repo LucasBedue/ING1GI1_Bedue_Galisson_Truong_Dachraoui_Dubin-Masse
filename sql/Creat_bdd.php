@@ -3,23 +3,22 @@
 $conn = new mysqli('localhost', 'root', '');
 
 // Check connection
-if (mysqli_connect_errno()) {
-    exit('Connect failed: ' . mysqli_connect_error());
+if ($conn->connect_error) {
+    exit('Connect failed: ' . $conn->connect_error);
 }
 
 // Check if "echoppe_de_doran" database exists, create if not
-if (!mysqli_query($conn, 'CREATE DATABASE IF NOT EXISTS echoppe_de_doran')) {
-    exit('Error creating database: ' . mysqli_error($conn));
+if (!$conn->query('CREATE DATABASE IF NOT EXISTS echoppe_de_doran')) {
+    exit('Error creating database: ' . $conn->error);
 }
 
 // Select "echoppe_de_doran" database
-mysqli_select_db($conn, 'echoppe_de_doran');
+$conn->select_db('echoppe_de_doran');
 
 // Check if "item" table exists, create if not
-$sql = "DESCRIBE item";
-$result = $conn->query($sql);
-if (!$result) {
-    $createTable = mysqli_query($conn, 'CREATE TABLE item (
+$result = $conn->query('DESCRIBE item');
+if ($result === FALSE && $conn->errno === 1146) { // Table does not exist
+    $createTable = $conn->query('CREATE TABLE item (
       nom varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
       prix int NOT NULL,
       stock int NOT NULL,
@@ -31,16 +30,15 @@ if (!$result) {
       PRIMARY KEY (nom)
     ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci');
     if (!$createTable) {
-        exit('Error creating table: ' . mysqli_error($conn));
+        exit('Error creating table: ' . $conn->error);
     }
 }
 
-// Read data from "item" table
-$select = mysqli_query($conn, 'SELECT * FROM item');
-if ($select) {
+// Read data from "item" table if it exists
+if ($result) {
     // Afficher les données au format HTML
     echo "<table>";
-    while ($row = $select->fetch_assoc()) { 
+    while ($row = $result->fetch_assoc()) { 
         echo "<tr>";
         echo "<td>Nom : " . $row["nom"] . "</td>";
         echo "<td>Prix : " . $row["prix"] . "</td>";
@@ -53,10 +51,8 @@ if ($select) {
         echo "</tr>";
     }
     echo "</table>";
-} else {
-    exit('Error reading data: ' . mysqli_error($conn));
 }
 
 // Close connection
-mysqli_close($conn);
+$conn->close();
 ?>

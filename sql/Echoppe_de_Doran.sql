@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   `nom` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `prix` int NOT NULL,
   `stock` int NOT NULL,
-  `categorie` varchar(4) NOT NULL,
+  `categorie` varchar(4) not NULL,
   `stats_pv` int NOT NULL,
   `stats_ad` int NOT NULL,
   `stats_ap` int NOT NULL,

@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Echoppe_De_Doran";
+$dbname = "Echoppe_de_doran";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -19,7 +19,7 @@ $result_item = $conn->query($sql_item);
 if ($result_item->num_rows > 0) {
     // Afficher les données de chaque item
     while($row_item = $result_item->fetch_assoc()) {
-        echo "Nom: " . $row_item["nom"]. " - Prix: " . $row_item["prix"]. " - Stock: " . $row_item["stock"]. "<br>";
+        echo "Nom: " . $row_item["nom"]. " - Prix: " . $row_item["prix"]. " - Stock: " . $row_item["stock"]. " - Catégorie: " . $row_item["categorie"]. " - PV: " . $row_item["stats_pv"]. " - AD: " . $row_item["stats_ad"]. " - AP: " . $row_item["stats_ap"] . " - Image: <img src='" . $row_item["image"] . "' alt='" . $row_item["nom"] . "'><br>";
     }
 } else {
     echo "0 résultats pour les items";
