@@ -7,12 +7,12 @@
 
 .login{
     padding-top: 8vh;
-    font-size: larger;
+    font-size: 2vb;
 }
 
 .login_text{
     padding-right: 3vw;
-    
+    font-size: 2vb;
 }
 
 .input{
@@ -30,12 +30,14 @@
     align-items: center;
     justify-content: center;
     padding-top: 5vh;
+    font-size: 1.75vb;
 }
 .textbox2{
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 1.5vh;
+    font-size: 1.75vb;
 }
 a:link{
     color: rgba(33,61,150,1);

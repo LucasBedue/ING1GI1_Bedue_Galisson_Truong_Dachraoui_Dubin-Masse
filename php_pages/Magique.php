@@ -63,17 +63,18 @@
 			<div class="left_side">
 				<div class="central_left_top_box">
 					L'Echoppe de Doran
-					<a
-						href="./Panier.php"
-					>
-						<div class="central_left_top_bottom_text_box">
-							Votre panier
-							<img
-								class="shopping_cart"
-								src="./../img/shopping-cart-icon.png"
-							/>
-						</div>
-					</a>
+					<div class="central_left_top_bottom_text_box_container">
+						<a href="./Panier.php">
+							<div class="central_left_top_bottom_text_box">
+								Votre panier
+								<img
+									class="shopping_cart"
+									src="./../img/shopping-cart-icon.png"
+								/>
+							</div>
+						</a>
+					</div>
+					
 				</div>
 				<div class="central_left_bottom_box">
 					<a

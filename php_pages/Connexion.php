@@ -130,6 +130,7 @@
 									<td class="login_text">Email :</td>
 									<td>
 										<input
+										class = "input_box"
 											type="text"
 											name="mail"
 											id="mail"
@@ -140,7 +141,8 @@
 								<tr>
 									<td class="login_text">Mot de passe :</td>
 									<td>
-										<input
+										<input 
+										class = "input_box"
 											type="password"
 											name="mdp"
 											id="mdp"

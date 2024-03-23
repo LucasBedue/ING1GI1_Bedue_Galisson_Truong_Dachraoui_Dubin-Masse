@@ -1,8 +1,6 @@
 .main_body{
     margin: 0%;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    
-
 }
 
 .text_color_yellow{
@@ -19,8 +17,8 @@
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(33,61,150,1) 87%);
     display: flex;
     position: relative;
-}
 
+}
 .poroicon{
     margin-left: 4%;
     margin-top: 1%;
@@ -28,7 +26,7 @@
 }
 
 .banner_title{
-    font-size: 7vh;
+    font-size: 7vb;
     position: absolute;
     right: 3vw;
     bottom: 0.5vw;
@@ -43,18 +41,21 @@
     color: rgb(227, 186, 19);
     width: fit-content;
     height: 5vh;
-    font-size: 2vh;
+    font-size: 2vb;
 }
 
 .top_menu_container{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    
+    left: 20vw;
+    position: absolute;
+    bottom: 0%;
+    font-size: 2vb;
 }
 
 .top_menu{
-    margin-left: 30px;
+
     display: grid;
     column-gap: 0.2vw;
     
@@ -69,7 +70,6 @@
     justify-content: center;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    font-size: 2vh;
     color: black;
 }
 .top_menu_box1:hover{
@@ -101,7 +101,7 @@
     display: flex;
     height: fit-content;
     width: 25vh;
-    font-size: 2vh;
+    font-size: 2vb;
 }
 
 
@@ -136,7 +136,7 @@
 }
 
 .central_left_top_box{
-    font-size: 3.5vh;
+    font-size: 3.5vb;
     text-align: center;
     border-bottom: 2px solid;
     padding-top: 4vh;
@@ -146,31 +146,39 @@
     position: relative;
     
 }
+.central_left_top_bottom_text_box_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vb;
+}
 
 .central_left_top_bottom_text_box{
-    font-size: 3vh;
-    position: absolute;
-    bottom: 3vh;
-    margin-left: 5vw;
+    font-size: 3vb;
+    margin-top: 1vb;
+    margin-left: -4vb;
+    margin-bottom: 1vb;
     color: rgb(141, 76, 11);
+    display: inline-block;
     
 }
 
-.central_left_top_bottom_text_box:hover{
+.central_left_top_bottom_text_box_container:hover{
     background-color: rgb(230, 189, 42);
 }
 
 .shopping_cart{
-    height: 110%;
+    width: 4vb;
     margin-bottom: 0.5vh;
     margin-left: 1vw;
     position: absolute;
+
 }
 
 .central_left_bottom_box{  
-    font-size: 2.5vh;
+    font-size: 2.5vb;
     margin-top: 3vh;
-    margin-left: 1vw ;
+    padding-left: 1vw   ;
     
     
 }
@@ -192,13 +200,11 @@
 }
 
 .central_left_bottom_bottom_text_box{
-    font-size: 2vh;
+    font-size: 2vb;
     position: absolute;
     bottom: 2vh;
     width: 15vw;
-    display: flex;
-    font-size: 2vh;
-    
+    display: flex; 
 }
 
 
@@ -224,7 +230,7 @@
     margin-right: 2vw;
     padding-top: 2.5vh;
     padding-bottom: 1vh;
-    font-size: 4vh;
+    font-size: 4vb;
     border-bottom: solid black ;
     border-width: thin;
     
@@ -238,8 +244,9 @@
     height: 10vh;
     width: 100vw;
     background: rgb(26,50,117);
-background: linear-gradient(180deg, rgba(26,50,117,1) 0%, rgba(3,3,41,1) 96%);
-    font-size: 2vh;
+    background: linear-gradient(180deg, rgba(26,50,117,1) 0%, rgba(3,3,41,1) 96%);
+    font-size: 2vb;
+
 }
 
 .bottom_banner_left_text{
@@ -248,6 +255,7 @@ background: linear-gradient(180deg, rgba(26,50,117,1) 0%, rgba(3,3,41,1) 96%);
     bottom: 3vh;
     left : 1vw;
     padding-left: 1vh;
+    
 }
 
 
@@ -257,44 +265,27 @@ background: linear-gradient(180deg, rgba(26,50,117,1) 0%, rgba(3,3,41,1) 96%);
     bottom: 3vh;
     right: 2vw;
     padding-left: 1vh;
+    
 }
 
 a:link{
     text-decoration: none;
 }
 
-.right_bottom_container{
-    display: grid;
-    width: auto;
-    padding-top: 2vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: lighter;
-}
-
-
-.item_pic{
-    width: 5vw;
-    
-}
-
-.col{
-    
-    font-weight: lighter;
-    
-}
 
 .right_bottom_container{
     display: grid;
     width: auto;
     padding-top: 2vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: lighter;
+
+    font-size: 1.75vb;
 }
 
 
 
 .item_pic{
-    width: 5vw;
+    width: 10vb;
     
 }
 
@@ -308,7 +299,7 @@ a:link{
 
 .button{
     width: 120%;
-    font-size: 130%;
+    font-size: 2vb;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -325,7 +316,7 @@ a:link{
 
 .button2{
     width: 100%;
-    font-size: 130%;
+    font-size: 2vb;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -341,6 +332,14 @@ a:link{
 }
 
 
+.input_box {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: rgba(97, 123, 208, 0.439) ;
+    height: 2.5vh;
+    font-size: 2vb;
+    
+}
 
 
 
