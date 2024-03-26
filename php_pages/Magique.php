@@ -174,7 +174,7 @@
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
 								echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
-								echo "<td><div class='col'><a href=\"./Magique?item=$nom\"><button class='button' type='button'>Ajouter</button></a></div></td>";
+								echo "<td><div class='col'><a href=\"./Magique.php?item=$nom\"><button class='button' type='button'>Ajouter</button></a></div></td>";
 								echo "</tr>";
 							}
 						} else {
