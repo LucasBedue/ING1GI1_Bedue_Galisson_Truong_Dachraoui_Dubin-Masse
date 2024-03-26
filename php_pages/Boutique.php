@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>L'Echoppe de Doran</title>
+		<title>L'Echoppe de Doran - Magique</title>
 		<link rel="stylesheet" href="../css/shop.css" />
+
 	</head>
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="../img/poro.png" class="poroicon" />
+			<img src="./../img/poro.png" class="poroicon" />
 			<a
 				href="./Connexion.php"
 			>
@@ -54,7 +55,7 @@
 			</div>
 
 			<div class="top_right_text">
-				<a class="text_color_yellow" href="index.php">Accueil</a>
+				<a class="text_color_yellow" href="./index.php">Accueil</a>
 				<div class="spacer">|</div>
 				<a
 					class="text_color_yellow"
@@ -67,7 +68,7 @@
 		</div>
 		<div class="central_banner">
 			<div class="left_side">
-				<div class="central_left_top_box">
+			<div class="central_left_top_box">
 					L'Echoppe de Doran
 					<a
 						href="./Panier.php"
@@ -143,34 +144,106 @@
 					</div>
 				</div>
 			</div>
+			
+			
 			<div class="right_side">
-				<div class="right_top_text">
-					Bienvenue dans l'échoppe de Doran
-				</div>
-				<div class="right_text_container">
-					<p class="right_first_textbox">
-						<span class="darkblue">L'échoppe de Doran</span>, 
-						la meilleure boutique pour vos items du renomé jeu : <span class="darkblue">League of Legends</span> </p>
-					<br>
-					<p>Accédez à l'ensemble de notre boutique <a class="text_color_black bolded" href="./Boutique.php">ici</a>, ou bien regardez par catégorie</p>
+				<div class="right_top_text">Notre boutique</div>
+				<table class="right_bottom_container">
+					<tr>
+						<td></td>
+						<td><div class="col">Nom</div></td>
+						<td><div class="col">HP</div></td>
+						<td><div class="col">AP</div></td>
+						<td><div class="col">AD</div></td>
+						<td><div class="col">Stock</div></td>
+						<td><div class="col">Prix</div></td>
+					</tr>
+					<?php
+						// Informations de connexion à la base de données
+						$serveur = "localhost"; 
+						$utilisateur = "root"; 
+						$motDePasse = ""; 
+						$baseDeDonnees = "Echoppe_de_doran"; 
 
-					<p>
-						Et si vous avez besoin d'aide pour faire votre choix, n'hésitez pas à utiliser 
-						<a class="text_color_black bolded" href="./Filtre.php">notre système de recherche</a>
-						pour filtrer l'ensemble de notre boutique et trouver l'item qu'il vous faut
-					</p>
+						// Connexion à la base de données
+						$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
-					<p>
-						Vous pouvez aussi nous contacter 
-						<a class="text_color_black bolded" href="./Contact.php">ici</a>
-						pour toute requête ou question que vous auriez
-					</p>
+						// Vérification de la connexion
+						if ($connexion->connect_error) {
+							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+						}
 
+						// Requête SQL pour récupérer les items magiques
+						$sql = "SELECT * FROM item WHERE categorie = 'Ap'";
+						$resultat = $connexion->query($sql);
+						
+						//Check si il y a un parametre dans l'url. Si c'est le cas,
+						//affiche la page de l'item.
+
+						if (isset($_GET["item"])){
+							
+						}
+						else{
+
+						}
+						
+
+						
+
+
+						// Vérification s'il y a des résultats
+						if ($resultat->num_rows > 0) {
+							// Parcourir les lignes de résultat
+							while ($row = $resultat->fetch_assoc()) {
+								// Accéder aux données récupérées
+								$nom = $row["nom"];
+								$stats_pv = $row["stats_pv"];
+								$stats_ap = $row["stats_ap"];
+								$stats_ad = $row["stats_ad"];
+								$stock = $row["stock"];
+								$prix = $row["prix"];
+								$image=$row["image"];
+								// Affichage de chaque item dans une ligne du tableau
+								echo "<tr>";
+								echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
+								echo "<td><div class='col'>$nom</div></td>";
+								echo "<td><div class='col'>$stats_pv HP</div></td>";
+								echo "<td><div class='col'>$stats_ap AP</div></td>";
+								echo "<td><div class='col'>$stats_ad AD</div></td>";
+								echo "<td><div class='col'>$stock</div></td>";
+								echo "<td><div class='col'>$prix $</div></td>";
+								$nom=urlencode($nom);
+								echo "<td><div class='col'><a href=\"./Magique.php?item=$nom\"><button class='button' type='button'>Ajouter</button></a></div></td>";
+								echo "</tr>";
+							}
+						} else {
+							echo "Aucun résultat trouvé.";
+						}
+
+						// Fermer la connexion à la base de données
+						$connexion->close();
+						?>
+				<tr>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
+					<td>
+					<div class="button_container2">
+						<button class="button2" type="button">Commander</button>
+					</div>
+					<td>
+				</tr>
+				</table>
 				
 				
-				</div>
+			
 			</div>
 		</div>
+	
 
 		<div class="bottom_banner">
 			<div class="bottom_banner_left_text">

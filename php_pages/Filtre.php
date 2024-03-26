@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>L'Echoppe de Doran</title>
 		<link rel="stylesheet" href="../css/shop.css" />
+		<link rel="stylesheet" href="../css/Connexion.css" />
+		<link rel="stylesheet" href="../css/Filtre.css" />
 	</head>
 
 	<body class="main_body">
@@ -43,7 +45,13 @@
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
 					</div>
-                    
+                    <div class="top_menu_box top_menu_box4">
+						<a
+							href="./Filtre.php"
+						>
+							<div class="top_menu_box top_menu_box4">Recherche</div>
+						</a>
+					</div>
 				</div>
 			</div>
 
@@ -76,6 +84,15 @@
 					</a>
 				</div>
 				<div class="central_left_bottom_box">
+                    <a
+						href="./Boutique.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Notre boutique
+						</div>
+					</a>
 					<a
 						href="./Physique.php"
 					>
@@ -105,6 +122,15 @@
 							Tank
 						</div>
 					</a>
+					<a
+						href="./Filtre.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Recherche
+						</div>
+					</a>
 
 					<div class="central_left_bottom_bottom_text_box">
 						<a class="text_color_black" href="./index.php"
@@ -123,15 +149,17 @@
 			<div class="right_side">
 
 				<div class="right_top_text">
-					Filtre
+					Filtrer des objets
 				</div>
                 
-                <div>
-                <form method="get" action="./Filtre.php">
-							<table class="login2">
+                <div class="right_container">
+					<div class="filter">
+						<!--	Login form	-->
+						<form method="get" action="./Filtre.php">
+							<table>
 								<tr>
-									<td>
-										<div class="creation_text">Nom de l'objet :</div>									</td>
+									<td class="row">
+										<label class="creation_text">Nom de l'objet :</label>									</td>
 									<td>
 										<input
 										class = "input_box"
@@ -143,23 +171,21 @@
 									</td>
 									<td>
 									</td>
-									<td>
-										<div class="creation_text">Type de l'objet :</div><!-- Penser à mettre des choix prédéfini-->
+									<td class="row">
+										<label class="creation_text">Type de l'objet :</label><!-- Penser à mettre des choix prédéfini-->
 									</td>
 									
-									<td>
-										<input
-										class = "input_box"
-											type="text"
-											name="itemtype"
-											id="itemtype"
-											
-										/>
+									<td class="row">
+										<select class="creation_text select_box" id="type" name="type">
+											<option value="physique">Physique</option>
+											<option value="magique">Magique</option>
+											<option value="tank">Tank</option>
+										</select>
 									</td>
 								</tr>
 								<tr>
-								<td>
-										<div class="creation_text">Prix minimum :</div>
+								<td class="row">
+										<label class="creation_text">Prix minimum :</label>
 									</td>
 									
 									<td>
@@ -171,14 +197,14 @@
 											
 										/>
 									</td>
-									
-								</tr>
-								<tr>
-								<td>
-										<div class="creation_text">Prix maximum :</div>
+									<td class="row">
+										<div>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+									</td>
+									<td class="row">
+									<label class="creation_text">Prix maximum :</label>
 									</td>
 									
-									<td>
+									<td class="row">
 										<input
 										class = "input_box"
 											type="text"
@@ -187,14 +213,15 @@
 											
 										/>
 									</td>
-									<td>
-										<div'>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
-									</td>
-									<td>
-										<div class="creation_text">HP minimum </div>
+								</tr>
+								
+								
+								<tr>
+								<td class="row">
+										<label class="creation_text">HP minimum </label>
 									</td>
 									
-									<td>
+									<td class="row">
 										<input
 										class = "input_box"
 											type="password"
@@ -203,16 +230,14 @@
 											
 										/>
 									</td>
-								</tr>
-								<tr>
-								
-								</tr>
-								<tr>
-								<td>
-										<div class="creation_text">HP max :</div>
+									<td class="row">
+										<div>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+									</td>
+								<td class="row">
+										<label class="creation_text">HP max :</label>
 									</td>
 									
-									<td>
+									<td class="row">
 										<input
 										class = "input_box"
 											type="text"
@@ -224,11 +249,11 @@
 									
 								</tr>
 								<tr>
-								<td>
-										<div class="creation_text">AP minimum :</div>
+								<td class="row">
+										<label class="creation_text">AP minimum :</label>
 									</td>
 									
-									<td>
+									<td class="row">
 										<input
 										class = "input_box"
 											type="text"
@@ -239,11 +264,11 @@
 									</td>
 									<td>
 									</td>
-									<td>
-										<div class="creation_text">AP maximum :</div>
+									<td class="row">
+										<label class="creation_text">AP maximum :</label>
 									</td>
 									
-									<td>
+									<td class="row">
 										<input
 										class = "input_box"
 											type="text"
@@ -255,8 +280,8 @@
 									
 								</tr>
 								<tr>
-								<td>
-										<div class="creation_text">AD minimum :</div>
+								<td class="row">
+										<label class="creation_text">AD minimum :</label>
 									</td>
 									
 									<td>
@@ -270,11 +295,11 @@
 									</td>
 									<td>
 									</td>
-									<td>
-										<div class="creation_text">AD maximum :</div>
+									<td class="row">
+										<label class="creation_text">AD maximum :</label>
 									</td>
 									
-									<td>
+									<td class="row">
 										<input
 										class = "input_box"
 											type="text"
@@ -292,11 +317,14 @@
 								<input class="button" type="submit" value="Rechercher" />
 							</div>
 						</form>
-                </div>
+
+					</div>
+					
+				</div>
 
                 <?php
                     if (empty($_GET)){
-                        echo "Veuillez selectionner vos filtres";
+                        echo "&nbsp &nbsp Veuillez sélectionner vos critères de recherche";
 
                     }
                     else{
@@ -373,7 +401,13 @@
 
 		</div>
 
-		<div class="bottom_banner">
+		
+
+
+
+
+		
+						<div class="bottom_banner">
 			<div class="bottom_banner_left_text">
 				L'Echoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
 			</div>

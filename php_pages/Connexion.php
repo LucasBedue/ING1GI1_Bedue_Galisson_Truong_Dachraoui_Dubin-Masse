@@ -6,6 +6,7 @@
 		<title>L'Echoppe de Doran - Connexion</title>
 		<link rel="stylesheet" href="../css/shop.css" />
 		<link rel="stylesheet" href="../css/Connexion.css" />
+		<link rel="stylesheet" href="../css/Creation.css" />
 	</head>
 
 	<body class="main_body">
@@ -44,6 +45,13 @@
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
 					</div>
+					<div class="top_menu_box top_menu_box4">
+						<a
+							href="./Filtre.php"
+						>
+							<div class="top_menu_box top_menu_box4">Recherche</div>
+						</a>
+					</div>
 				</div>
 			</div>
 
@@ -76,6 +84,15 @@
 					</a>
 				</div>
 				<div class="central_left_bottom_box">
+                    <a
+						href="./Boutique.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Notre boutique
+						</div>
+					</a>
 					<a
 						href="./Physique.php"
 					>
@@ -105,6 +122,15 @@
 							Tank
 						</div>
 					</a>
+					<a
+						href="./Filtre.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Recherche
+						</div>
+					</a>
 
 					<div class="central_left_bottom_bottom_text_box">
 						<a class="text_color_black" href="./index.php"
@@ -125,9 +151,11 @@
 					<div class="login">
 						<!--	Login form	-->
 						<form method="post" action="../php/verificationConnexion.php">
-							<table class="login2">
+							<table>
 								<tr>
-									<td class="login_text">Email :</td>
+									<td class="row">
+										<label class="creation_text">Connexion :</label>
+									</td>
 									<td>
 										<input
 										class = "input_box"
@@ -139,7 +167,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="login_text">Mot de passe :</td>
+									<td class="row">
+										<label class="creation_text">Mot de passe :</label>
+									</td>
 									<td>
 										<input 
 										class = "input_box"

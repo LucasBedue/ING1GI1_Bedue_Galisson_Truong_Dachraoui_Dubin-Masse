@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>L'Echoppe de Doran - Contact</title>
 		<link rel="stylesheet" href="../css/shop.css" />
+		<link rel="stylesheet" href="../css/Connexion.css" />
 	</head>
 
 	<body class="main_body">
@@ -43,6 +44,13 @@
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
 					</div>
+					<div class="top_menu_box top_menu_box4">
+						<a
+							href="./Filtre.php"
+						>
+							<div class="top_menu_box top_menu_box4">Recherche</div>
+						</a>
+					</div>
 				</div>
 			</div>
 
@@ -75,6 +83,15 @@
 					</a>
 				</div>
 				<div class="central_left_bottom_box">
+                    <a
+						href="./Boutique.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Notre boutique
+						</div>
+					</a>
 					<a
 						href="./Physique.php"
 					>
@@ -104,6 +121,15 @@
 							Tank
 						</div>
 					</a>
+					<a
+						href="./Filtre.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Recherche
+						</div>
+					</a>
 
 					<div class="central_left_bottom_bottom_text_box">
 						<a class="text_color_black" href="./index.php"
@@ -121,6 +147,181 @@
 			<div class="right_side">
 				<div class="right_top_text">
 					Nous contacter
+				</div>
+				<div class="right_container">
+					<div class="login">
+						<!--	Login form	-->
+						<form method="post" action="./verificationConnexion.php">
+							<table >
+								<tr>
+									<td class="row">
+										<label class="creation_text">Prénom :</label>
+									</td>
+									<td class="row">
+										<input
+										class = "input_box"
+											type="text"
+											name="FirstName"
+											id="Fname"
+											required
+										/>
+									</td>
+									<td class="row">
+										<div>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+									</td>
+									<td class="row">
+										<label class="creation_text">Nom de famille :</label>
+									</td>
+									
+									<td class="row">
+										<input
+										class = "input_box"
+											type="text"
+											name="LastName"
+											id="Lname"
+											required
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td class="row">
+										<label class="creation_text">Nom de l'entreprise :</label>
+									</td>
+									
+									<td class="row">
+										<input
+										class = "input_box"
+											type="text"
+											name="entreprise"
+											id="entreprise"
+											required
+										/>
+									</td>
+									<td class="row">
+										<div>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+									</td>
+									<td class="row">
+										<label class="creation_text">Sexe :</label>
+									</td>
+									
+									<td class="row">
+									<label class="radio">F
+										<input class="radio" type="radio" name="F">
+										
+									</label>
+									<label class="radio">M
+										<input class="radio" type="radio" name="M">
+										
+									</label>
+									<label class="radio">Autre
+										<input class="radio" type="radio" name="Other">
+										
+									</label>
+									</td>
+								</tr>
+								<tr>
+									<td class="row">
+										<label class="creation_text">Email :</label>
+									</td>
+									
+									<td class="row">
+										<input
+										class = "input_box"
+											type="text"
+											name="mail"
+											id="mail"
+											required
+										/>
+									</td>
+									
+								</tr>
+								
+								<tr>
+									<td class="row">
+										<label class="creation_text">Numéro de téléphone :</label>
+									</td>
+									
+									<td class="row">
+										<input
+										class = "input_box"
+											type="text"
+											name="telephone"
+											id="telephone"
+											required
+										/>
+									</td>
+									<td class="row">
+										<div>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</div>
+									</td>
+									<td class="row">
+										<label class="creation_text">Date de naissance :</label>
+									</td>
+									
+									<td class="row">
+									<input class = "input_box" type="date" id="DOB" name="DOB" />
+									</td>
+									
+								</tr>
+								<tr>
+									<td class="row">
+										<label class="creation_text">Fonction :</label>
+									</td>
+									
+									<td class="row">
+										<select class="creation_text select_box" id="fonction" name="fonction">
+											<option value="top">Top</option>
+											<option value="jungle">Jungle</option>
+											<option value="mid">Mid</option>
+											<option value="bot">Bottom</option>
+											<option value="support">Support</option>
+										</select>
+									</td>
+									
+									
+								</tr>
+						
+								
+								
+							</table>
+
+							<table>
+							<tr>
+									<td class="row">
+										<label class="creation_text">Sujet :</label>
+									</td>
+									
+									<td class="row">
+										<input
+										class = "input_box sujet_text"
+											type="text"
+											name="sujet"
+											id="sujet"
+											required
+										/>
+									</td>
+									
+								</tr>
+								<tr>
+									<td class="row">
+										<label class="creation_text">Message :</label>
+									</td>
+									
+									<td class="row">
+										<textarea class = "textarea_box"
+											name="message"
+											id="message"
+											rows="4" cols="90"
+											required>		</textarea>
+									</td>
+									
+								</tr></table>
+							<br />
+							<div class="input">
+								<input class="button" type="submit" value="Envoyer" />
+							</div>
+						</form>
+					</div>
+					
 				</div>
 			</div>
 		</div>

@@ -44,6 +44,13 @@
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
 					</div>
+					<div class="top_menu_box top_menu_box4">
+						<a
+							href="./Filtre.php"
+						>
+							<div class="top_menu_box top_menu_box4">Recherche</div>
+						</a>
+					</div>
 				</div>
 			</div>
 
@@ -61,22 +68,30 @@
 		</div>
 		<div class="central_banner">
 			<div class="left_side">
-				<div class="central_left_top_box">
+			<div class="central_left_top_box">
 					L'Echoppe de Doran
-					<div class="central_left_top_bottom_text_box_container">
-						<a href="./Panier.php">
-							<div class="central_left_top_bottom_text_box">
-								Votre panier
-								<img
-									class="shopping_cart"
-									src="./../img/shopping-cart-icon.png"
-								/>
-							</div>
-						</a>
-					</div>
-					
+					<a
+						href="./Panier.php"
+					>
+						<div class="central_left_top_bottom_text_box">
+							Votre panier
+							<img
+								class="shopping_cart"
+								src="./../img/shopping-cart-icon.png"
+							/>
+						</div>
+					</a>
 				</div>
 				<div class="central_left_bottom_box">
+                    <a
+						href="./Boutique.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Notre boutique
+						</div>
+					</a>
 					<a
 						href="./Physique.php"
 					>
@@ -104,6 +119,15 @@
 							class="central_left_bottom_text_box central_left_bottom_text_box3"
 						>
 							Tank
+						</div>
+					</a>
+					<a
+						href="./Filtre.php"
+					>
+						<div
+							class="central_left_bottom_text_box0"
+						>
+							Recherche
 						</div>
 					</a>
 
