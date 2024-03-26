@@ -152,6 +152,20 @@
 						// Requête SQL pour récupérer les items magiques
 						$sql = "SELECT * FROM item WHERE categorie = 'Ap'";
 						$resultat = $connexion->query($sql);
+						
+						//Check si il y a un parametre dans l'url. Si c'est le cas,
+						//affiche la page de l'item.
+
+						if (isset($_GET["item"])){
+							
+						}
+						else{
+
+						}
+						
+
+						
+
 
 						// Vérification s'il y a des résultats
 						if ($resultat->num_rows > 0) {
@@ -174,6 +188,7 @@
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
 								echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
+								$nom=urlencode($nom);
 								echo "<td><div class='col'><a href=\"./Magique.php?item=$nom\"><button class='button' type='button'>Ajouter</button></a></div></td>";
 								echo "</tr>";
 							}

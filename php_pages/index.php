@@ -43,6 +43,13 @@
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
 					</div>
+					<div class="top_menu_box top_menu_box4">
+						<a
+							href="./Filtre.php"
+						>
+							<div class="top_menu_box top_menu_box3">Filtre</div>
+						</a>
+					</div>
 				</div>
 			</div>
 
@@ -102,6 +109,15 @@
 							class="central_left_bottom_text_box central_left_bottom_text_box3"
 						>
 							Tank
+						</div>
+					</a>
+					<a
+						href="./Filtre.php"
+					>
+						<div
+							class="central_left_bottom_text_box central_left_bottom_text_box4"
+						>
+							Filtre
 						</div>
 					</a>
 
