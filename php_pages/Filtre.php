@@ -358,10 +358,16 @@
 						}
 
 						// Requête SQL pour récupérer les items 
-                        
-						$sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
-						$resultat = $connexion->query($sql);
+                        if ($itemtype==""){
+                            $sql = "SELECT * FROM item";
+                        }
+                        else{
+                            $sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
+                        }
 						
+						$resultat = $connexion->query($sql);
+
+						$numberOfBoxs=0;
 
                         
 						// Vérification s'il y a des résultats
@@ -376,7 +382,16 @@
 								$stock = $row["stock"];
 								$prix = $row["prix"];
 								$image=$row["image"];
+                                $boolafficheur=0;//sert à confirmer l'affichage
+
+                                //Check les caractéristiques des items recherchés
+                                if($prixmin==""){
+                                    $prixmin=0;
+                                }
+                                //...
+                                
 								// Affichage de chaque item dans une ligne du tableau
+
 								echo "<tr>";
 								echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
 								echo "<td><div class='col'>$nom</div></td>";
@@ -385,9 +400,10 @@
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
 								echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
-								$nom=urlencode($nom);
-								echo "<td><div class='col'><a href=\"./Magique.php?item=$nom\"><button class='button' type='button'>Ajouter</button></a></div></td>";
+								echo "<td><div class='col'><button class='button' id=\"box$numberOfBoxs\" onclick=\"showAddPanel(this)\"type='button'>Voir stocks</button></div></td>";
 								echo "</tr>";
+
+                                $numberOfBoxs++;
 							}
 						} else {
 							echo "Aucun résultat trouvé.";
