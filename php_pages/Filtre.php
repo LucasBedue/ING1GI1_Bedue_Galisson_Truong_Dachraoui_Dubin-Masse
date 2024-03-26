@@ -294,6 +294,81 @@
 						</form>
                 </div>
 
+                <?php
+                    if (empty($_GET)){
+                        echo "Veuillez selectionner vos filtres";
+
+                    }
+                    else{
+                        
+                        // Informations de connexion à la base de données
+						$serveur = "localhost"; 
+						$utilisateur = "root"; 
+						$motDePasse = ""; 
+						$baseDeDonnees = "Echoppe_de_doran"; 
+
+                        //Information de recherche sur la base de données
+                        $searchname=$_GET["searchname"];
+                        $itemtype=$_GET["itemtype"];
+                        $prixmin=$_GET["prixmin"];
+                        $prixmax=$_GET["prixmax"];
+                        $HPmin=$_GET["HPmin"];
+                        $HPmax=$_GET["HPmax"];
+                        $ADmin=$_GET["ADmin"];
+                        $ADmax=$_GET["ADmax"];
+                        $APmin=$_GET["APmin"];
+                        $APmax=$_GET["APmax"];
+
+
+
+						// Connexion à la base de données
+						$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+
+						// Vérification de la connexion
+						if ($connexion->connect_error) {
+							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+						}
+
+						// Requête SQL pour récupérer les items 
+                        
+						$sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
+						$resultat = $connexion->query($sql);
+						
+
+                        
+						// Vérification s'il y a des résultats
+						if ($resultat->num_rows > 0) {
+							// Parcourir les lignes de résultat
+							while ($row = $resultat->fetch_assoc()) {
+								// Accéder aux données récupérées
+								$nom = $row["nom"];
+								$stats_pv = $row["stats_pv"];
+								$stats_ap = $row["stats_ap"];
+								$stats_ad = $row["stats_ad"];
+								$stock = $row["stock"];
+								$prix = $row["prix"];
+								$image=$row["image"];
+								// Affichage de chaque item dans une ligne du tableau
+								echo "<tr>";
+								echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
+								echo "<td><div class='col'>$nom</div></td>";
+								echo "<td><div class='col'>$stats_pv HP</div></td>";
+								echo "<td><div class='col'>$stats_ap AP</div></td>";
+								echo "<td><div class='col'>$stats_ad AD</div></td>";
+								echo "<td><div class='col'>$stock</div></td>";
+								echo "<td><div class='col'>$prix $</div></td>";
+								$nom=urlencode($nom);
+								echo "<td><div class='col'><a href=\"./Magique.php?item=$nom\"><button class='button' type='button'>Ajouter</button></a></div></td>";
+								echo "</tr>";
+							}
+						} else {
+							echo "Aucun résultat trouvé.";
+						}
+
+
+
+                    }
+                ?>
 			</div>
 
 		</div>
