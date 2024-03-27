@@ -177,9 +177,10 @@
 									
 									<td class="row">
 										<select class="creation_text select_box" id="type" name="type">
-											<option value="physique">Physique</option>
-											<option value="magique">Magique</option>
-											<option value="tank">Tank</option>
+											<option value="Ad">Physique</option>
+											<option value="Ap">Magique</option>
+											<option value="Tank">Tank</option>
+                                            <option value="">All</option>
 										</select>
 									</td>
 								</tr>
@@ -321,7 +322,8 @@
 					</div>
 					
 				</div>
-
+                <table class="right_bottom_container">				
+				
                 <?php
                     if (empty($_GET)){
                         echo "&nbsp &nbsp Veuillez sélectionner vos critères de recherche";
@@ -337,7 +339,7 @@
 
                         //Information de recherche sur la base de données
                         $searchname=$_GET["searchname"];
-                        $itemtype=$_GET["itemtype"];
+                        $itemtype=$_GET["type"];
                         $prixmin=$_GET["prixmin"];
                         $prixmax=$_GET["prixmax"];
                         $HPmin=$_GET["HPmin"];
@@ -358,6 +360,7 @@
 						}
 
 						// Requête SQL pour récupérer les items 
+                        
                         if ($itemtype==""){
                             $sql = "SELECT * FROM item";
                         }
@@ -390,7 +393,24 @@
                                 }
                                 //...
                                 
-								// Affichage de chaque item dans une ligne du tableau
+								
+                                //Affichage de la ligne informative.
+                                if($numberOfBoxs==0){
+                                    echo "<tr>";
+                                echo "<td></td>";
+                                echo "<td><div class=\"col\">Nom</div></td>";
+                                echo "<td><div class=\"col\">HP</div></td>";
+                                echo "<td><div class=\"col\">AP</div></td>";
+                                echo "<td><div class=\"col\">AD</div></td>";
+                                echo "<td><div class=\"col\">Stock</div></td>";
+                                echo "<td><div class=\"col\">Prix</div></td>";
+                                echo "</tr>";
+                                }
+                                
+
+
+
+                                // Affichage de chaque item dans une ligne du tableau
 
 								echo "<tr>";
 								echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
@@ -413,6 +433,9 @@
 
                     }
                 ?>
+                
+                </table>
+
 			</div>
 
 		</div>
