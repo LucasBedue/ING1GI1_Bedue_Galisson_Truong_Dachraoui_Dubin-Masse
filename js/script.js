@@ -63,15 +63,16 @@ zoomImage.addEventListener("mouseout", function() {
 
 
 
-// Sélectionner le lien de l'image
-var imageLink = document.getElementById("imageLink");
 
 // Rediriger vers la page précédente en cliquant sur le bouton de fermeture
 function retourPagePrecedente() {
     window.history.back();
 }
 
+
 // Ajouter un événement au clic sur l'image pour ouvrir la nouvelle page
-imageLink.addEventListener("click", function() {
-    window.open(imageLink.href, "_blank");
-});
+function showpicture(indicepicture){
+    var imageLink = document.getElementById("item_pic"+indicepicture);
+    window.open(imageLink.src, "_blank");
+    
+}

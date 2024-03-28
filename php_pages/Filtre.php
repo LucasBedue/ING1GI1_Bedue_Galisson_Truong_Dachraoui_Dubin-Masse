@@ -413,7 +413,7 @@
                                 // Affichage de chaque item dans une ligne du tableau
 
 								echo "<tr>";
-								echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
+								echo "<td><div class='col'><img id=\"item_pic$numberOfBoxs\" class='item_pic' src='./../img/$image' onclick=\"showpicture($numberOfBoxs)\" /></div></td>";
 								echo "<td><div class='col'>$nom</div></td>";
 								echo "<td><div class='col'>$stats_pv HP</div></td>";
 								echo "<td><div class='col'>$stats_ap AP</div></td>";
@@ -455,6 +455,6 @@
 				Galisson - Audrey Truong
 			</div>
 		</div>
-		
-	</body>
+        <script type="text/javascript" src="../js/script.js"></script>	
+    </body>
 </php>
