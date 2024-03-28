@@ -368,6 +368,10 @@ span{
     padding-bottom: 1vb;
 }
 
+.zoomed{
+    width: 15vb;
+}
+
 /* ------------------------------- 
 
     CSS for the different buttons and input types used in the project
@@ -445,6 +449,8 @@ span{
     background-color: rgba(226, 231, 244, 0.88) ;
     
 }
+
+
 /* -------------------------------------- */
 
 /* Changes to the links on all the pages */

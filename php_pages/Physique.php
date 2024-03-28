@@ -174,6 +174,7 @@
 					?>
 
 					<tr>
+					</table>
 						<td>&nbsp</td>
 						<td>&nbsp</td>
 						<td>&nbsp</td>
@@ -187,7 +188,7 @@
 							</div>
 						<td>
 					</tr>
-				</table>
+				
 
 
 			</div>

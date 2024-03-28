@@ -129,9 +129,10 @@
 
 									<td class="row">
 										<select class="creation_text select_box" id="type" name="type">
-											<option value="physique">Physique</option>
-											<option value="magique">Magique</option>
-											<option value="tank">Tank</option>
+											<option value="Ad">Physique</option>
+											<option value="Ap">Magique</option>
+											<option value="Tank">Tank</option>
+                                            <option value="">All</option>
 										</select>
 									</td>
 								</tr>
@@ -225,10 +226,11 @@
 					</div>
 
 				</div>
-
-				<?php
-				if (empty($_GET)) {
-					echo "&nbsp &nbsp Veuillez sélectionner vos critères de recherche";
+                <table class="right_bottom_container">				
+				
+                <?php
+                    if (empty($_GET)){
+                        echo "&nbsp &nbsp Veuillez sélectionner vos critères de recherche";
 
 				} else {
 
@@ -238,17 +240,17 @@
 					$motDePasse = "";
 					$baseDeDonnees = "Echoppe_de_doran";
 
-					//Information de recherche sur la base de données
-					$searchname = $_GET["searchname"];
-					$itemtype = $_GET["itemtype"];
-					$prixmin = $_GET["prixmin"];
-					$prixmax = $_GET["prixmax"];
-					$HPmin = $_GET["HPmin"];
-					$HPmax = $_GET["HPmax"];
-					$ADmin = $_GET["ADmin"];
-					$ADmax = $_GET["ADmax"];
-					$APmin = $_GET["APmin"];
-					$APmax = $_GET["APmax"];
+                        //Information de recherche sur la base de données
+                        $searchname=$_GET["searchname"];
+                        $itemtype=$_GET["type"];
+                        $prixmin=$_GET["prixmin"];
+                        $prixmax=$_GET["prixmax"];
+                        $HPmin=$_GET["HPmin"];
+                        $HPmax=$_GET["HPmax"];
+                        $ADmin=$_GET["ADmin"];
+                        $ADmax=$_GET["ADmax"];
+                        $APmin=$_GET["APmin"];
+                        $APmax=$_GET["APmax"];
 
 
 
@@ -260,50 +262,69 @@
 						die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 					}
 
-					// Requête SQL pour récupérer les items 
-					if ($itemtype == "") {
-						$sql = "SELECT * FROM item";
-					} else {
-						$sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
-					}
-
-					$resultat = $connexion->query($sql);
+						// Requête SQL pour récupérer les items 
+                        
+                        if ($itemtype==""){
+                            $sql = "SELECT * FROM item";
+                        }
+                        else{
+                            $sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
+                        }
+						
+						$resultat = $connexion->query($sql);
 
 					$numberOfBoxs = 0;
 
+                        
+						// Vérification s'il y a des résultats
+						if ($resultat->num_rows > 0) {
+							// Parcourir les lignes de résultat
+							while ($row = $resultat->fetch_assoc()) {
+								// Accéder aux données récupérées
+								$nom = $row["nom"];
+								$stats_pv = $row["stats_pv"];
+								$stats_ap = $row["stats_ap"];
+								$stats_ad = $row["stats_ad"];
+								$stock = $row["stock"];
+								$prix = $row["prix"];
+								$image=$row["image"];
+                                $boolafficheur=0;//sert à confirmer l'affichage
 
-					// Vérification s'il y a des résultats
-					if ($resultat->num_rows > 0) {
-						// Parcourir les lignes de résultat
-						while ($row = $resultat->fetch_assoc()) {
-							// Accéder aux données récupérées
-							$nom = $row["nom"];
-							$stats_pv = $row["stats_pv"];
-							$stats_ap = $row["stats_ap"];
-							$stats_ad = $row["stats_ad"];
+                                //Check les caractéristiques des items recherchés
+                                if($prixmin==""){
+                                    $prixmin=0;
+                                }
+                                //...
+                                
+								
+                                //Affichage de la ligne informative.
+                                if($numberOfBoxs==0){
+                                    echo "<tr>";
+                                echo "<td></td>";
+                                echo "<td><div class=\"col\">Nom</div></td>";
+                                echo "<td><div class=\"col\">HP</div></td>";
+                                echo "<td><div class=\"col\">AP</div></td>";
+                                echo "<td><div class=\"col\">AD</div></td>";
+                                echo "<td><div class=\"col\">Stock</div></td>";
+                                echo "<td><div class=\"col\">Prix</div></td>";
+                                echo "</tr>";
+                                }
+                                
 
-							$prix = $row["prix"];
-							$image = $row["image"];
-							$boolafficheur = 0;//sert à confirmer l'affichage
-				
-							//Check les caractéristiques des items recherchés
-							if ($prixmin == "") {
-								$prixmin = 0;
-							}
-							//...
-				
-							// Affichage de chaque item dans une ligne du tableau
-				
-							echo "<tr>";
-							echo "<td><div class='col'><img class='item_pic' src='./../img/$image' /></div></td>";
-							echo "<td><div class='col'>$nom</div></td>";
-							echo "<td><div class='col'>$stats_pv HP</div></td>";
-							echo "<td><div class='col'>$stats_ap AP</div></td>";
-							echo "<td><div class='col'>$stats_ad AD</div></td>";
 
-							echo "<td><div class='col'>$prix $</div></td>";
-							echo "<td><div class='col'><button class='button' id=\"box$numberOfBoxs\" onclick=\"showAddPanel(this)\"type='button'>Voir stocks</button></div></td>";
-							echo "</tr>";
+
+                                // Affichage de chaque item dans une ligne du tableau
+
+								echo "<tr>";
+								echo "<td><div class='col'><img id=\"item_pic$numberOfBoxs\" class='item_pic' src='./../img/$image' onclick=\"showpicture($numberOfBoxs)\" onmouseover=\"zoomImage($numberOfBoxs)\" onmouseout=\"dezoomImage($numberOfBoxs)\"/></div></td>";
+								echo "<td><div class='col'>$nom</div></td>";
+								echo "<td><div class='col'>$stats_pv HP</div></td>";
+								echo "<td><div class='col'>$stats_ap AP</div></td>";
+								echo "<td><div class='col'>$stats_ad AD</div></td>";
+								echo "<td><div class='col'>$stock</div></td>";
+								echo "<td><div class='col'>$prix $</div></td>";
+								echo "<td><div class='col'><button class='button' id=\"box$numberOfBoxs\" onclick=\"showAddPanel(this)\"type='button'>Voir stocks</button></div></td>";
+								echo "</tr>";
 
 							$numberOfBoxs++;
 						}
@@ -313,8 +334,11 @@
 
 
 
-				}
-				?>
+                    }
+                ?>
+                
+                </table>
+
 			</div>
 
 		</div>
@@ -334,6 +358,6 @@
 				Galisson - Audrey Truong
 			</div>
 		</div>
-
-	</body>
+        <script type="text/javascript" src="../js/script.js"></script>	
+    </body>
 </php>
