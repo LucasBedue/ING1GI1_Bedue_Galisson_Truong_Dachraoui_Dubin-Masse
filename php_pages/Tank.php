@@ -64,12 +64,12 @@
 				>
 			</div>
 
-			<div class="banner_title">L'Echoppe de Doran</div>
+			<div class="banner_title">L'Échoppe de Doran</div>
 		</div>
 		<div class="central_banner">
 			<div class="left_side">
 				<div class="central_left_top_box">
-					L'Echoppe de Doran
+					L'Échoppe de Doran
 					<a
 						href="./Panier.php"
 					>
@@ -153,7 +153,7 @@
 						<td><div class="col">HP</div></td>
 						<td><div class="col">AP</div></td>
 						<td><div class="col">AD</div></td>
-						<td><div class="col">Stock</div></td>
+						
 						<td><div class="col">Prix</div></td>
 					</tr>
 					<?php
@@ -184,7 +184,7 @@
 								$stats_pv = $row["stats_pv"];
 								$stats_ap = $row["stats_ap"];
 								$stats_ad = $row["stats_ad"];
-								$stock = $row["stock"];
+								
 								$prix = $row["prix"];
 								$image=$row["image"];
 								// Affichage de chaque item dans une ligne du tableau
@@ -194,7 +194,7 @@
 								echo "<td><div class='col'>$stats_pv HP</div></td>";
 								echo "<td><div class='col'>$stats_ap AP</div></td>";
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
-								echo "<td><div class='col'>$stock</div></td>";
+								
 								echo "<td><div class='col'>$prix $</div></td>";
 								echo "<td><div class='col'><button class='button' type='button'>Ajouter</button></div></td>";
 								echo "</tr>";
@@ -230,7 +230,7 @@
 
 		<div class="bottom_banner">
 			<div class="bottom_banner_left_text">
-				L'Echoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
+				L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
 			</div>
 			<div class="bottom_banner_right_text">
 				Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias

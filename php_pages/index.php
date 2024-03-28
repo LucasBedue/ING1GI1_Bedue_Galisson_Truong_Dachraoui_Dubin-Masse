@@ -63,12 +63,12 @@
 				>
 			</div>
 
-			<div class="banner_title">L'Echoppe de Doran</div>
+			<div class="banner_title">L'Échoppe de Doran</div>
 		</div>
 		<div class="central_banner">
 			<div class="left_side">
 				<div class="central_left_top_box">
-					L'Echoppe de Doran
+					L'Échoppe de Doran
 					<a
 						href="./Panier.php"
 					>
@@ -149,20 +149,20 @@
 				</div>
 				<div class="right_text_container">
 					<p class="right_first_textbox">
-						<span class="darkblue">L'échoppe de Doran</span>, 
-						la meilleure boutique pour vos items du renomé jeu : <span class="darkblue">League of Legends</span> </p>
+						<span>L'Échoppe de Doran</span>, 
+						la meilleure boutique pour vos items du renomé jeu : <span>League of Legends</span> </p>
 					<br>
-					<p>Accédez à l'ensemble de notre boutique <a class="text_color_black bolded" href="./Boutique.php">ici</a>, ou bien regardez par catégorie</p>
+					<p>Accédez à l'ensemble de notre boutique <a class="text_color_turquoise bolded" href="./Boutique.php">ici</a>, ou bien regardez par catégorie</p>
 
 					<p>
 						Et si vous avez besoin d'aide pour faire votre choix, n'hésitez pas à utiliser 
-						<a class="text_color_black bolded" href="./Filtre.php">notre système de recherche</a>
+						<a class="text_color_turquoise bolded" href="./Filtre.php">notre système de recherche</a>
 						pour filtrer l'ensemble de notre boutique et trouver l'item qu'il vous faut
 					</p>
 
 					<p>
 						Vous pouvez aussi nous contacter 
-						<a class="text_color_black bolded" href="./Contact.php">ici</a>
+						<a class="text_color_turquoise bolded" href="./Contact.php">ici</a>
 						pour toute requête ou question que vous auriez
 					</p>
 
@@ -174,7 +174,7 @@
 
 		<div class="bottom_banner">
 			<div class="bottom_banner_left_text">
-				L'Echoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
+				L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
 			</div>
 			<div class="bottom_banner_right_text">
 				Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias

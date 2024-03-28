@@ -423,7 +423,7 @@
 								echo "<td><div class='col'><button class='button$numberOfBoxs' id=\"box$numberOfBoxs\" onclick=\"changeTheDiv($numberOfBoxs)\"type='button'>Voir stocks</button></div></td>";
 								echo "</tr>";
                                 echo "<tr>";
-                                echo "<div id=\"hiddenDiv$numberOfBoxs\" style=\"display:none\"></div>";
+                                echo "<div id=\"hiddenDiv$numberOfBoxs\" style=\"display:none\">yo</div>";
                                 echo "</tr>";
                                 $numberOfBoxs++;
 							}
