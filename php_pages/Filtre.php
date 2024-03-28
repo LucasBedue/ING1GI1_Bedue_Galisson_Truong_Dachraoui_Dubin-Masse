@@ -382,7 +382,7 @@
 								$stats_pv = $row["stats_pv"];
 								$stats_ap = $row["stats_ap"];
 								$stats_ad = $row["stats_ad"];
-								$stock = $row["stock"];
+								//$stock = $row["stock"];
 								$prix = $row["prix"];
 								$image=$row["image"];
                                 $boolafficheur=0;//sert à confirmer l'affichage
@@ -402,7 +402,7 @@
                                 echo "<td><div class=\"col\">HP</div></td>";
                                 echo "<td><div class=\"col\">AP</div></td>";
                                 echo "<td><div class=\"col\">AD</div></td>";
-                                echo "<td><div class=\"col\">Stock</div></td>";
+                                //echo "<td><div class=\"col\">Stock</div></td>";
                                 echo "<td><div class=\"col\">Prix</div></td>";
                                 echo "</tr>";
                                 }
@@ -418,7 +418,7 @@
 								echo "<td><div class='col'>$stats_pv HP</div></td>";
 								echo "<td><div class='col'>$stats_ap AP</div></td>";
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
-								echo "<td><div class='col'>$stock</div></td>";
+								//echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
 								echo "<td><div class='col'><button class='button$numberOfBoxs' id=\"box$numberOfBoxs\" onclick=\"changeTheDiv($numberOfBoxs)\"type='button'>Voir stocks</button></div></td>";
 								echo "</tr>";
