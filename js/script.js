@@ -1,3 +1,18 @@
+function changeTheDiv(indicediv){
+    var hiddenDiv = document.getElementById("hiddenDiv"+indicediv);
+
+    if (hiddenDiv.style.display === "none") {
+        // Afficher le div s'il est caché
+        hiddenDiv.style.display = "block";
+    } else {
+        // Masquer le div s'il est affiché
+        hiddenDiv.style.display = "none";
+    }
+
+}
+
+
+/*
 // Sélectionner le bouton et le div caché
 var toggleButton = document.getElementById("toggleButton");
 var hiddenDiv = document.getElementById("hiddenDiv");
@@ -14,6 +29,7 @@ toggleButton.addEventListener("click", function() {
     }
 });
 
+*/
 
 var value = 0;
 var maxValue = 10;

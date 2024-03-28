@@ -420,9 +420,11 @@
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
 								echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
-								echo "<td><div class='col'><button class='button' id=\"box$numberOfBoxs\" onclick=\"showAddPanel(this)\"type='button'>Voir stocks</button></div></td>";
+								echo "<td><div class='col'><button class='button$numberOfBoxs' id=\"box$numberOfBoxs\" onclick=\"changeTheDiv($numberOfBoxs)\"type='button'>Voir stocks</button></div></td>";
 								echo "</tr>";
-
+                                echo "<tr>";
+                                echo "<div id=\"hiddenDiv$numberOfBoxs\" style=\"display:none\">YO</div>";
+                                echo "</tr>";
                                 $numberOfBoxs++;
 							}
 						} else {
