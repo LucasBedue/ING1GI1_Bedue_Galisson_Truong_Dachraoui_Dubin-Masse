@@ -48,21 +48,20 @@ decreaseButton.addEventListener("click", function() {
 updateDisplay();
 
 
-// Récupérer l'élément image
-var zoomImage = document.getElementById("zoomImage");
-
-// Ajouter une classe pour activer le zoom au survol
-zoomImage.addEventListener("mouseover", function() {
-    zoomImage.classList.add("zoomed");
-});
-
-// Retirer la classe pour désactiver le zoom
-zoomImage.addEventListener("mouseout", function() {
-    zoomImage.classList.remove("zoomed");
-});
 
 
+function zoomImage(indicepicture){
+    var imageLink = document.getElementById("item_pic"+indicepicture);
+    imageLink.classList.remove("item_pic");
+    imageLink.classList.add("zoomed");
+}
 
+function dezoomImage(indicepicture){
+    var imageLink = document.getElementById("item_pic"+indicepicture);
+    imageLink.classList.remove("zoomed");
+    imageLink.classList.add("item_pic");
+
+}
 
 // Rediriger vers la page précédente en cliquant sur le bouton de fermeture
 function retourPagePrecedente() {

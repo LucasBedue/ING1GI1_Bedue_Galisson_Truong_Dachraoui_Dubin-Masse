@@ -411,3 +411,7 @@ a:hover{
     background-color: rgba(226, 231, 244, 0.88) ;
     
 }
+
+.zoomed{
+    width: 15vb;
+}
