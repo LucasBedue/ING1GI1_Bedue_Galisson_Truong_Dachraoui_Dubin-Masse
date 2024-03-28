@@ -359,9 +359,37 @@
 							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 						}
 
+						// Function to validate if the input is an integer
+    					function validateInt($input) {
+        					return intval($input, 10) === $input;
+    					}
+						$valid=TRUE;
+						$valid=validateInt($input);
+						
+						if ($valid) {
+							// Requête SQL pour récupérer les items 
+							if ($itemtype == "") {
+								$sql = "SELECT * FROM item";
+							} else {
+								$sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
+							}
+					
+							$resultat = $connexion->query($sql);
+					
+							$numberOfBoxs = 0;
+					
+							// Vérification s'il y a des résultats
+							if ($resultat->num_rows > 0) {
+								// ... (rest of your code to display search results)
+							} else {
+								echo "Aucun résultat trouvé.";
+							}
+						}
+
+
 						// Requête SQL pour récupérer les items 
                         
-                        if ($itemtype==""){
+                        /*if ($itemtype==""){
                             $sql = "SELECT * FROM item";
                         }
                         else{
@@ -370,7 +398,7 @@
 						
 						$resultat = $connexion->query($sql);
 
-						$numberOfBoxs=0;
+						$numberOfBoxs=0;*/
 
                         
 						// Vérification s'il y a des résultats
