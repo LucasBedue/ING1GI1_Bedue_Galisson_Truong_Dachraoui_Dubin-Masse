@@ -1,9 +1,12 @@
+/* Additional CSS used for Tank.php */
+
+/* Changes the color of the third tab in the top menu */
 .top_menu_box3{
     grid-column: 3;
     background-color: rgb(58, 202, 92);
 }
 
-
+/* Changes the color of the background on the right side */
 .right_side{
     height: 70vh;
     width: 80vw;

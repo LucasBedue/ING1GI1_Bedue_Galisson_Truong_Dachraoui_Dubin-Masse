@@ -64,12 +64,12 @@
 				>
 			</div>
 
-			<div class="banner_title">L'Echoppe de Doran</div>
+			<div class="banner_title">L'Échoppe de Doran</div>
 		</div>
 		<div class="central_banner">
 			<div class="left_side">
 				<div class="central_left_top_box">
-					L'Echoppe de Doran
+					L'Échoppe de Doran
 					<a
 						href="./Panier.php"
 					>
@@ -328,7 +328,7 @@
 
 		<div class="bottom_banner">
 			<div class="bottom_banner_left_text">
-				L'Echoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
+				L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
 			</div>
 			<div class="bottom_banner_right_text">
 				Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias

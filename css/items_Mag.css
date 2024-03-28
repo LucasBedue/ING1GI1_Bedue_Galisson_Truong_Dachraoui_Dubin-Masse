@@ -1,9 +1,12 @@
+/* Additional CSS used for Magique.php */
+
+/* Changes the color of the second tab in the top menu */
 .top_menu_box2{
     grid-column: 2;
     background-color: rgb(118, 114, 233);
 }
 
-
+/* Changes the color of the background on the right side */
 .right_side{
     height: 70vh;
     width: 80vw;

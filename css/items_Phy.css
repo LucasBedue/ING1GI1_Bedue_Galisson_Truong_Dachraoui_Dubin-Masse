@@ -1,9 +1,12 @@
+/* Additional CSS used for Physique.php */
+
+/* Changes the color of the first tab in the top menu */
 .top_menu_box1{
     grid-column: 1;
     background-color: rgb(233, 134, 20);
 }
 
-
+/* Changes the color of the background on the right side */
 .right_side{
     height: 70vh;
     width: 80vw;

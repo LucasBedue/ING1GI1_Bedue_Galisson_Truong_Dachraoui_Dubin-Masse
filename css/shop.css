@@ -1,3 +1,6 @@
+/* Main CSS for the "Echoppe de Doran" project */
+
+/* Whole page */
 .main_body{
     margin: 0%;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -6,9 +9,28 @@
 .text_color_yellow{
     color: rgb(227, 186, 19);
 }
+.text_color_turquoise{
+    color: rgb(29, 191, 220);
+}
 .text_color_black{
     color: rgb(0, 0, 0);
 }
+
+.bolded {
+    font-weight: bold;
+
+}
+
+span{
+    color: rgb(138, 90, 8);
+    font-size: 3.5vb;
+}
+
+/* ------------------------------- 
+
+    CSS for the banner at the top of the page
+
+ ------------------------------- */
 
 .top_banner{
     height: 20vh;
@@ -19,6 +41,7 @@
     position: relative;
 
 }
+
 .poroicon{
     margin-left: 4%;
     margin-top: 1%;
@@ -44,6 +67,9 @@
     font-size: 2vb;
 }
 
+
+/* Central menu */
+
 .top_menu_container{
     display: flex;
     justify-content: flex-end;
@@ -61,6 +87,7 @@
     
 }
 
+/* Individual box for the menu */
 .top_menu_box{
     background-color: rgb(255, 255, 255);
     width: 10vw;
@@ -87,7 +114,6 @@
 
 .top_menu_box1{
     grid-column: 1;
-
 }
 .top_menu_box2{
     grid-column: 2;
@@ -98,6 +124,9 @@
 .top_menu_box4{
     grid-column: 4;
 }
+
+/* --------------- */
+
 
 .top_right_text{
     position: absolute;
@@ -110,7 +139,7 @@
     font-size: 2vb;
 }
 
-
+/* Spacer between the two parts in the top right corner */
 .spacer{
     padding-left: 2%;
     padding-right: 2%;
@@ -118,9 +147,16 @@
 }
 
 
+/* --------------------------------- */
 
 
 
+
+/* ------------------------------- 
+
+    CSS for the central banner of the page
+
+ ------------------------------- */
 
 .central_banner{
     height: 70vh;
@@ -128,9 +164,11 @@
 }
 
 
+/* ------------------------------- 
 
+    CSS for the left side of the central banner of the page
 
-
+ ------------------------------- */
 
 
 .left_side{
@@ -140,7 +178,7 @@
     position: absolute;
     left: 1px;
 }
-
+/* Top part of the left box */
 .central_left_top_box{
     font-size: 4vb;
     text-align: center;
@@ -169,9 +207,6 @@
     
 }
 
-.central_left_top_bottom_text_box_container:hover{
-    background-color: rgb(230, 189, 42);
-}
 
 .shopping_cart{
     width: 4vb;
@@ -181,13 +216,14 @@
 
 }
 
+/* Bottom part of the left box with the side menu */
+
 .central_left_bottom_box{  
     font-size: 2.5vb;
     margin-top: 3vh;
     padding-left: 1vw   ;
-    
-    
 }
+
 .central_left_bottom_text_box0:hover{
     background-color: rgb(114, 183, 233);
 }
@@ -201,12 +237,7 @@
     background-color: rgb(58, 202, 92);
 }
 
-.central_left_bottom_text_box{
-    position: relative;
-    padding: 1vh;
-    color: black;
-    margin-left: 2vw;
-}
+/* Menu boxes for the shop and search tab */
 
 .central_left_bottom_text_box0{
     position: relative;
@@ -215,6 +246,16 @@
     font-size: larger;
 }
 
+/* Sub menu boxes */
+
+.central_left_bottom_text_box{
+    position: relative;
+    padding: 1vh;
+    color: black;
+    margin-left: 2vw;
+}
+
+/* Bottom text box of the left side */
 .central_left_bottom_bottom_text_box{
     font-size: 2vb;
     position: absolute;
@@ -224,23 +265,14 @@
 }
 
 
+/* --------------------------------- */
 
 
+/* ------------------------------- 
 
-.bolded {
-    font-weight: bold;
-    color: rgb(34, 34, 104);
-}
+    CSS for the right side of the central banner of the page
 
-.darkblue {
-    color: rgb(34, 34, 104);
-    
-}
-
-.right_first_textbox{
-    font-size: 3vb;
-}
-
+ ------------------------------- */
 
 
 .right_side{
@@ -270,6 +302,17 @@
 }
 
 
+.right_first_textbox{
+    font-size: 3vb;
+}
+
+/* --------------------------------------------- */
+
+/* ------------------------------- 
+
+    CSS for the banner at the bottom of the page
+
+ ------------------------------- */
 
 .bottom_banner{
     height: 10vh;
@@ -299,14 +342,6 @@
     
 }
 
-a:link{
-    text-decoration: none;
-    
-}
-a:hover{
-    font-weight: 600;
-}
-
 .right_bottom_container{
     display: grid;
     width: auto;
@@ -316,22 +351,28 @@ a:hover{
     font-size: 1.75vb;
 }
 
+/* --------------------------------- */
 
-
+/* CSS for the tables showing the items */
 
 .item_pic{
     width: 10vb;
-    
 }
 
 .col{
     padding-left: 6vw;
     font-weight: lighter;
-    
 }
 
+.row{
+    padding-bottom: 1vb;
+}
 
+/* ------------------------------- 
 
+    CSS for the different buttons and input types used in the project
+
+ ------------------------------- */
 
 .button{
     width: 120%;
@@ -368,46 +409,50 @@ a:hover{
 }
 
 
-.row{
-    padding-bottom: 1vb;
-}
 .input_box {
     border: none;
     border-bottom: 1px solid black;
     background-color: rgba(226, 231, 244, 0.88) ;
     height: 3vb;
     font-size: 2vb;
-
     font-family: Georgia, 'Times New Roman', Times, serif;
-    
 }
 
 .creation_text{
     padding-right: 3vw;
     font-size: 2.5vb;
-
 }
 
 .radio{
     font-size: 2.5vb;
-
 }
 
 .select_box{
-
     border: none;
     border-bottom: 1px solid black;
     background-color: rgba(226, 231, 244, 0.88) ;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .sujet_text{
     width: 20vw;
-    
 }
+
 .textarea_box{
     font-size: 2vb;
     font-family: Georgia, 'Times New Roman', Times, serif;
     resize: none;
     background-color: rgba(226, 231, 244, 0.88) ;
     
+}
+/* -------------------------------------- */
+
+/* Changes to the links on all the pages */
+
+a:link{
+    text-decoration: none;
+    
+}
+a:hover{
+    font-weight: 600;
 }
