@@ -166,6 +166,7 @@
 											type="text"
 											name="searchname"
 											id="searchname"
+											pattern="[A-Za-z]+"
 											
 										/>
 									</td>
@@ -195,6 +196,7 @@
 											type="text"
 											name="prixmin"
 											id="prixmin"
+											pattern="[0-9]{0,5}"
 											
 										/>
 									</td>
@@ -211,7 +213,7 @@
 											type="text"
 											name="prixmax"
 											id="prixmax"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 								</tr>
@@ -225,10 +227,10 @@
 									<td class="row">
 										<input
 										class = "input_box"
-											type="password"
+											type="text"
 											name="HPmin"
 											id="HPmin"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 									<td class="row">
@@ -244,7 +246,7 @@
 											type="text"
 											name="HPmax"
 											id="HPmax"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 									
@@ -260,7 +262,7 @@
 											type="text"
 											name="APmin"
 											id="APmin"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 									<td>
@@ -275,7 +277,7 @@
 											type="text"
 											name="APmax"
 											id="APmax"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 									
@@ -291,7 +293,7 @@
 											type="text"
 											name="ADmin"
 											id="ADmin"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 									<td>
@@ -306,7 +308,7 @@
 											type="text"
 											name="ADmax"
 											id="ADmax"
-											
+											pattern="[0-9]{0,5}"
 										/>
 									</td>
 									
@@ -359,37 +361,9 @@
 							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 						}
 
-						// Function to validate if the input is an integer
-    					function validateInt($input) {
-        					return intval($input, 10) === $input;
-    					}
-						$valid=TRUE;
-						$valid=validateInt($input);
-						
-						if ($valid) {
-							// Requête SQL pour récupérer les items 
-							if ($itemtype == "") {
-								$sql = "SELECT * FROM item";
-							} else {
-								$sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
-							}
-					
-							$resultat = $connexion->query($sql);
-					
-							$numberOfBoxs = 0;
-					
-							// Vérification s'il y a des résultats
-							if ($resultat->num_rows > 0) {
-								// ... (rest of your code to display search results)
-							} else {
-								echo "Aucun résultat trouvé.";
-							}
-						}
-
-
 						// Requête SQL pour récupérer les items 
                         
-                        /*if ($itemtype==""){
+                        if ($itemtype==""){
                             $sql = "SELECT * FROM item";
                         }
                         else{
@@ -398,7 +372,7 @@
 						
 						$resultat = $connexion->query($sql);
 
-						$numberOfBoxs=0;*/
+						$numberOfBoxs=0;
 
                         
 						// Vérification s'il y a des résultats
@@ -448,11 +422,27 @@
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
 								//echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
-								echo "<td><div class='col'><button class='button$numberOfBoxs' id=\"box$numberOfBoxs\" onclick=\"changeTheDiv($numberOfBoxs)\"type='button'>Voir stocks</button></div></td>";
+								echo "<td><div class='col'><button class='button' id=\"box$numberOfBoxs\" onclick=\"changeTheDiv($numberOfBoxs)\"type='button'>Voir stocks</button></div></td>";
 								echo "</tr>";
-                                echo "<tr>";
-                                echo "<div id=\"hiddenDiv$numberOfBoxs\" style=\"display:none\">yo</div>";
+
+                                echo "<tr id=\"hiddenDiv$numberOfBoxs\" style=\"display:none\" >";//The hidden row
+                                
+                                echo "<td><div class='col'>";
+                                echo "<button class=\"add1\" id=\"addbutton$numberOfBoxs\" type=\"button\" onclick=\"increase($numberOfBoxs)\" >Add</button>";
+                                echo "</div></td>";
+
+                                echo "<td><div class='col'>";
+                                echo "<input class = \"showStockTextField\" type=\"text\" id=\"showStockTextField$numberOfBoxs\" disabled value=\"0\"/>";
+                                echo "</div></td>";
+
+                                echo "<td><div class='col'>";
+                                echo "<button class=\"remove1\" id=\"removebutton$numberOfBoxs\"  type=\"button\" onclick=\"decrease($numberOfBoxs)\">Remove</button>";
+                                echo "</div></td>";
+
+
+
                                 echo "</tr>";
+
                                 $numberOfBoxs++;
 							}
 						} else {
