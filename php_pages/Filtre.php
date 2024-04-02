@@ -404,7 +404,6 @@
                                 echo "<td><div class=\"col\">HP</div></td>";
                                 echo "<td><div class=\"col\">AP</div></td>";
                                 echo "<td><div class=\"col\">AD</div></td>";
-                                //echo "<td><div class=\"col\">Stock</div></td>";
                                 echo "<td><div class=\"col\">Prix</div></td>";
                                 echo "</tr>";
                                 }
@@ -416,17 +415,17 @@
 
 								echo "<tr>";
 								echo "<td><div class='col'><img id=\"item_pic$numberOfBoxs\" class='item_pic' src='./../img/$image' onclick=\"showpicture($numberOfBoxs)\" onmouseover=\"zoomImage($numberOfBoxs)\" onmouseout=\"dezoomImage($numberOfBoxs)\"/></div></td>";
-								echo "<td><div class='col'>$nom</div></td>";
+								echo "<td><div class='col' id=\"nom$numberOfBoxs\" title=\"$nom\" >$nom</div></td>";
 								echo "<td><div class='col'>$stats_pv HP</div></td>";
 								echo "<td><div class='col'>$stats_ap AP</div></td>";
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
-								//echo "<td><div class='col'>$stock</div></td>";
 								echo "<td><div class='col'>$prix $</div></td>";
 								echo "<td><div class='col'><button class='button' id=\"box$numberOfBoxs\" onclick=\"changeTheDiv($numberOfBoxs)\"type='button'>Voir stocks</button></div></td>";
 								echo "</tr>";
 
                                 echo "<tr id=\"hiddenDiv$numberOfBoxs\" style=\"display:none\" >";//The hidden row
                                 
+								//The count to fill the kart
                                 echo "<td><div class='col'>";
                                 echo "<button class=\"add1\" id=\"addbutton$numberOfBoxs\" type=\"button\" onclick=\"increase($numberOfBoxs)\" >Add</button>";
                                 echo "</div></td>";
@@ -439,6 +438,9 @@
                                 echo "<button class=\"remove1\" id=\"removebutton$numberOfBoxs\"  type=\"button\" onclick=\"decrease($numberOfBoxs)\">Remove</button>";
                                 echo "</div></td>";
 
+								echo "<td><div class='col'>";
+                                echo "<button class=\"addToCart\" id=\"addToCartButton$numberOfBoxs\"  type=\"button\" onclick=\"\">Ajouter au panier</button>";
+                                echo "</div></td>";
 
 
                                 echo "</tr>";

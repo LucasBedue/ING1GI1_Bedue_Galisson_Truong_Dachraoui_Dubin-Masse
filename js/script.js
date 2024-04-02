@@ -1,6 +1,29 @@
+function getXhr(){//To create an XHR object
+    var xhr = null; 
+if(window.XMLHttpRequest) // Firefox et autres
+xhr = new XMLHttpRequest(); 
+else if(window.ActiveXObject){ // Internet Explorer 
+try {
+xhr = new ActiveXObject("Msxml2.XMLHTTP");
+} catch (e) {
+xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+}
+else { // XMLHttpRequest non supporté par le navigateur 
+alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest..."); 
+xhr = false; 
+} 
+    return xhr
+}
+
+
+
+
 function changeTheDiv(indicediv){
     var hiddenDiv = document.getElementById("hiddenDiv"+indicediv);
     var buttonKart=document.getElementById("box"+indicediv);
+    var textInputShow = document.getElementById("showStockTextField"+indicediv);
+
     if (hiddenDiv.style.display === "none") {
         // Afficher le div s'il est caché
         hiddenDiv.style.display = "block";
@@ -11,6 +34,9 @@ function changeTheDiv(indicediv){
             if(i!=indicediv){
                 hiddenDiv=hiddenDiv = document.getElementById("hiddenDiv"+i);
                 buttonKart=document.getElementById("box"+i);
+                var textInputShow = document.getElementById("showStockTextField"+i);
+
+                textInputShow.value="0";
                 hiddenDiv.style.display = "none";
                 buttonKart.textContent="Voir stocks";
 
@@ -20,51 +46,41 @@ function changeTheDiv(indicediv){
     } else {
         // Masquer le div s'il est affiché
         hiddenDiv.style.display = "none";
+        textInputShow.value="0";
         buttonKart.textContent="Voir stocks";
     }
 
 }
 
 
-var value = 0;
-var maxValue = 10;
-
-// Sélectionner les éléments du DOM
-
-/*
-// Mettre à jour l'affichage de la valeur
-function updateDisplay() {
-    displayValue.textContent = value;
-}
-
-// Augmenter la valeur
-increaseButton.addEventListener("click", function() {
-    if (value < maxValue) {
-        value++;
-        updateDisplay();
-    }
-});
-
-// Diminuer la valeur
-decreaseButton.addEventListener("click", function() {
-    if (value > 0) {
-        value--;
-        updateDisplay();
-    }
-});
-
-// Initialiser l'affichage
-updateDisplay();
-*/
-
 function increase(indice){
-    var increaseButton = document.getElementById("addbutton"+indice);
+    var textInputShow = document.getElementById("showStockTextField"+indice);
+    var num=parseInt(textInputShow.value);
+    var divWithnameItem=document.getElementById("nom"+indice);
+    var itemName=divWithnameItem.title;
+    var stockmax=10;
 
+    //ajax request to get the stock-max
+    
+      
+    
+    
+    if(num<stockmax){
+        num+=1;
+        textInputShow.value=num;
+
+    }
+    
 }
 
 function decrease(indice){
-    var decreaseButton = document.getElementById("removebutton"+indice);
+    var textInputShow = document.getElementById("showStockTextField"+indice);
+    var num=parseInt(textInputShow.value);
+    if(textInputShow.value>0){
+        num-=1;
+        textInputShow.value=num;
 
+    }
 }
 
 
@@ -94,6 +110,3 @@ function showpicture(indicepicture){
     
 }
 
-function verifyForm(){
-    
-}
