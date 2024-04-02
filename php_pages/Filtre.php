@@ -7,16 +7,57 @@
 		<link rel="stylesheet" href="../css/shop.css" />
 		<link rel="stylesheet" href="../css/Connexion.css" />
 		<link rel="stylesheet" href="../css/Filtre.css" />
+		<?php // To start or restore the session
+			session_start();
+
+			// To check if the last activity timestamp exists in the session
+			if (isset($_SESSION['last_activity'])) {
+				// Inactivity time in seconds (15 minutes = 900 seconds)
+				$inactive_duration = 900;
+
+				// Time count since last activity
+				$elapsed_time = time() - $_SESSION['last_activity'];
+
+				// Check if user has been inactive for more than 15 minutes
+				if ($elapsed_time > $inactive_duration) {
+					// Destroys the session
+					session_destroy();
+					
+					// Redirects the user to the logout page
+					header("Location: ../php/deconnexion.php");
+					exit;
+				}
+			}
+
+			// Records the current amount of time in the session
+			$_SESSION['last_activity'] = time();
+
+			/*
+			//if not already connected, kick you out
+			if (!isset($_SESSION['role']) || $_SESSION['role'] !== "Client") {
+				echo '<script>alert("Veuillez vous connecter pour accéder à cette page.");</script>';
+				echo '<script>window.location.href = "./Connexion.php";</script>';
+				exit();
+			}
+			*/
+			
+			?>
 	</head>
 
 	<body class="main_body">
 		<div class="top_banner">
 			<img src="../img/poro.png" class="poroicon" />
-			<a
-				href="./Connexion.php"
-			>
-				<div class="top_left_text">Se connecter</div>
-			</a>
+			<?php 
+			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
+				echo "<a href=\"./Connexion.php\">";
+				echo "<div class=\"top_left_text\">Se connecter</div></a>";
+			}
+			else{
+				echo "<a href=\"../php/deconnexion.php\">";
+				echo "<div class=\"top_left_text\">Se déconnecter</div></a>";
+			}
+				?>
+				
 
 			<div class="top_menu_container">
 				<div class="top_menu">
