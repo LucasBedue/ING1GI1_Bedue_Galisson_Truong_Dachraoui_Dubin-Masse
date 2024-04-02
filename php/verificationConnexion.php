@@ -9,9 +9,9 @@
      while(!feof($file)) {                                      
         $line = fgets($file);                                       //select a line then split it into several parts
         $values = explode(";", $line);
-        $mail_file = isset($values[3]) ? trim($values[3]) : null;
-        $mdp_file = isset($values[4]) ? trim($values[4]) : null;
-        $role_file = isset($values[5]) ? trim($values[5]) : null;
+        $mail_file = isset($values[5]) ? trim($values[5]) : null;
+        $mdp_file = isset($values[6]) ? trim($values[6]) : null;
+        $role_file = isset($values[9]) ? trim($values[9]) : null;
 
         if ($mail_file == $mail && $mdp_file == $mdp) {             //check if password and email address match
         

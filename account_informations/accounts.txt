@@ -1,2 +1,3 @@
-bedue;lucas;0001-01-01;bedue@gmail.com;1234;Client;
-jean;luis;2015-06-10;jean.luis@gmail.com;1234;Admin;
+bedue;lucas;Spontex;M;0001-01-01;bedue@gmail.com;1234;0644330263;support;Admin;
+Dachraoui;Elyes;;M;2025-02-02;elyes@gmail.com;0000;0562626262;support;Client;
+Truong;Audrey;BDAC;F;2024-04-16;audrey@gmail.com;1111;0656235475;support;Client;
