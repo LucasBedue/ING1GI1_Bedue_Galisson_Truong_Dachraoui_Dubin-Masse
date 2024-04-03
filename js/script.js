@@ -56,14 +56,12 @@ function changeTheDiv(indicediv){
 function increase(indice){
     var textInputShow = document.getElementById("showStockTextField"+indice);
     var num=parseInt(textInputShow.value);
-    var divWithnameItem=document.getElementById("nom"+indice);
-    var itemName=divWithnameItem.title;
-    var stockmax=10;
 
-    //ajax request to get the stock-max
-    
-      
-    
+    var stockmaxdiv=document.getElementById("showMaxStockTextField"+indice);
+    var textstockmaxdiv=stockmaxdiv.value;
+    textstockmaxdiv=textstockmaxdiv.replace("/","");
+    var stockmax=parseInt(textstockmaxdiv);
+
     
     if(num<stockmax){
         num+=1;
@@ -107,6 +105,10 @@ function retourPagePrecedente() {
 function showpicture(indicepicture){
     var imageLink = document.getElementById("item_pic"+indicepicture);
     window.open(imageLink.src, "_blank");
+    
+}
+
+function AddToCart(indice){
     
 }
 

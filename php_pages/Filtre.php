@@ -425,7 +425,7 @@
 								$stats_pv = $row["stats_pv"];
 								$stats_ap = $row["stats_ap"];
 								$stats_ad = $row["stats_ad"];
-								//$stock = $row["stock"];
+								$stock = $row["stock"];
 								$prix = $row["prix"];
 								$image=$row["image"];
                                 $boolafficheur=0;//sert à confirmer l'affichage
@@ -468,19 +468,20 @@
                                 
 								//The count to fill the kart
                                 echo "<td><div class='col'>";
-                                echo "<button class=\"add1\" id=\"addbutton$numberOfBoxs\" type=\"button\" onclick=\"increase($numberOfBoxs)\" >Add</button>";
+                                echo "<button class=\"button\" id=\"addbutton$numberOfBoxs\" type=\"button\" onclick=\"increase($numberOfBoxs)\" >Add</button>";
                                 echo "</div></td>";
 
                                 echo "<td><div class='col'>";
                                 echo "<input class = \"showStockTextField\" type=\"text\" id=\"showStockTextField$numberOfBoxs\" disabled value=\"0\"/>";
-                                echo "</div></td>";
+								echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+								echo "</div></td>";
 
                                 echo "<td><div class='col'>";
-                                echo "<button class=\"remove1\" id=\"removebutton$numberOfBoxs\"  type=\"button\" onclick=\"decrease($numberOfBoxs)\">Remove</button>";
+                                echo "<button class=\"button\" id=\"removebutton$numberOfBoxs\"  type=\"button\" onclick=\"decrease($numberOfBoxs)\">Remove</button>";
                                 echo "</div></td>";
 
 								echo "<td><div class='col'>";
-                                echo "<button class=\"addToCart\" id=\"addToCartButton$numberOfBoxs\"  type=\"button\" onclick=\"\">Ajouter au panier</button>";
+                                echo "<button class=\"button\" id=\"addToCartButton$numberOfBoxs\"  type=\"button\" onclick=\"AddToCart($numberOfBoxs)\">Ajouter au panier</button>";
                                 echo "</div></td>";
 
 
