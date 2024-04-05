@@ -29,12 +29,13 @@ function changeTheDiv(indicediv){
         hiddenDiv.style.display = "block";
         buttonKart.textContent="Cacher Stock";
 
+        
         var othersbutton=document.getElementsByClassName("button");
         for(var i=0;i<othersbutton.length;i++){
             if(i!=indicediv){
                 hiddenDiv=hiddenDiv = document.getElementById("hiddenDiv"+i);
                 buttonKart=document.getElementById("box"+i);
-                var textInputShow = document.getElementById("showStockTextField"+i);
+                textInputShow = document.getElementById("showStockTextField"+i);
 
                 textInputShow.value="0";
                 hiddenDiv.style.display = "none";
@@ -109,6 +110,18 @@ function showpicture(indicepicture){
 }
 
 function AddToCart(indice){
-    
+    var textInputShow = document.getElementById("showStockTextField"+indice);
+    var num=parseInt(textInputShow.value); //The stock
+
+
+    var itemNameDiv=document.getElementById("nom"+indice);
+    var nomItem=itemNameDiv.title; //The name of the item
+
+    if(!(num==0)){
+        document.location.href="../php/ajoutPanier.php?nomItem="+nomItem+"&stockToAdd="+num;
+
+    }
+
+
 }
 

@@ -44,8 +44,7 @@ $fichier = fopen('../account_informations/accounts.txt', 'a');
 fwrite($fichier, $nom . ';' . $prenom . ';' . $entreprise . ';' . $sexe . ';' . $date_naissance . ';' . $mail . ';' . $mdp . ';' . $telephone . ';' . $fonction . ';' . $role . ";\n");    //writes personal information to the file
 fclose($fichier);
 
-$f = fopen('../account_informations/kartInformations/'.$mail,'a+');
-fclose($f);
+
 
 header('Location: ../php_pages/Connexion.php');
 

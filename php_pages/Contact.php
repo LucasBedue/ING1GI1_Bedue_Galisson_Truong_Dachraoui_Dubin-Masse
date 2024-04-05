@@ -151,7 +151,7 @@
 				<div class="right_container">
 					<div class="login">
 						<!--	Login form	-->
-						<form method="post" action="./verificationConnexion.php">
+						<form method="post" action="../php/EnvoiContact.php">
 							<table >
 								<tr>
 									<td class="row">
@@ -194,7 +194,7 @@
 											type="text"
 											name="entreprise"
 											id="entreprise"
-											required
+											
 										/>
 									</td>
 									<td class="row">
@@ -206,15 +206,15 @@
 									
 									<td class="row">
 									<label class="radio">F
-										<input class="radio" type="radio" name="F">
+										<input class="radio" type="radio" name="Sexe" value="F">
 										
 									</label>
 									<label class="radio">M
-										<input class="radio" type="radio" name="M">
+										<input class="radio" type="radio" name="Sexe" value="M">
 										
 									</label>
 									<label class="radio">Autre
-										<input class="radio" type="radio" name="Other">
+										<input class="radio" type="radio" name="Sexe" value="O">
 										
 									</label>
 									</td>
@@ -247,7 +247,7 @@
 											type="text"
 											name="telephone"
 											id="telephone"
-											required
+											
 										/>
 									</td>
 									<td class="row">

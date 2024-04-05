@@ -456,7 +456,7 @@
 
 								echo "<tr>";
 								echo "<td><div class='col'><img id=\"item_pic$numberOfBoxs\" class='item_pic' src='./../img/$image' onclick=\"showpicture($numberOfBoxs)\" onmouseover=\"zoomImage($numberOfBoxs)\" onmouseout=\"dezoomImage($numberOfBoxs)\"/></div></td>";
-								echo "<td><div class='col' id=\"nom$numberOfBoxs\" title=\"$nom\" >$nom</div></td>";
+								echo "<td><div class='col'> <p id=\"nom$numberOfBoxs\" title=\"$nom\" >$nom</p></div></td>";
 								echo "<td><div class='col'>$stats_pv HP</div></td>";
 								echo "<td><div class='col'>$stats_ap AP</div></td>";
 								echo "<td><div class='col'>$stats_ad AD</div></td>";
@@ -496,6 +496,7 @@
 
 
                     }
+					
                 ?>
                 
                 </table>
