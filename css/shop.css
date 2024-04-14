@@ -41,11 +41,17 @@ span{
     position: relative;
 
 }
-
-.poroicon{
+.iconcontainer{
     margin-left: 4%;
     margin-top: 1%;
     margin-bottom: 1%;
+    margin-right: 2%;
+}
+.poroicon{
+
+    height: 16vh;
+   
+    
 }
 
 .banner_title{
@@ -325,18 +331,16 @@ span{
 
 .bottom_banner_left_text{
     color: white;
-    position: absolute;
-    bottom: 3vh;
-    left : 1vw;
-    padding-left: 1vh;
-    
+    padding-top: 0.5vh;
+    padding-left: 2vh;
+
 }
 
 
 .bottom_banner_right_text{
     color: white;
     position: absolute;
-    bottom: 3vh;
+    bottom: 2vh;
     right: 2vw;
     padding-left: 1vh;
     

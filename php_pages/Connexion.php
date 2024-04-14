@@ -11,10 +11,12 @@
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="./../img/poro.png" class="poroicon" />
-			<a
-				href="./Connexion.php"
-			>
+		<div class="iconcontainer">
+				<a href="./index.php">
+					<img src="./../img/poro.png" class="poroicon" />
+				</a>
+			</div>
+			<a href="./Connexion.php">
 				<div class="top_left_text">Se connecter</div>
 			</a>
 
@@ -199,8 +201,9 @@
 
 		<div class="bottom_banner">
 			<div class="bottom_banner_left_text">
-				L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
-			</div>
+			<p>L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024</p>
+				<p>League of Legends et toutes les images utilisées appartiennent à Riot Games Inc.</p>
+						</div>
 			<div class="bottom_banner_right_text">
 				Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias
 				Galisson - Audrey Truong
