@@ -415,6 +415,14 @@
 
 						$numberOfBoxs=0;
 
+						//Check if the item is already in the the session.
+						//If yes, reduce the amount of max-stock available
+						if((isset($_SESSION['cartItem']))||($_SESSION['cartItem']!="")){
+							$listeNomItem=explode(";",$_SESSION['cartItem']);
+							$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
+
+						}
+
                         
 						// Vérification s'il y a des résultats
 						if ($resultat->num_rows > 0) {
@@ -436,7 +444,10 @@
                                 }
                                 //...
                                 
+
 								
+								
+
                                 //Affichage de la ligne informative.
                                 if($numberOfBoxs==0){
                                     echo "<tr>";
@@ -473,7 +484,33 @@
 
                                 echo "<td><div class='col'>";
                                 echo "<input class = \"showStockTextField\" type=\"text\" id=\"showStockTextField$numberOfBoxs\" disabled value=\"0\"/>";
-								echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+
+								//
+								if(isset($listeNomItem)){
+									$index=-1;
+									for($i=0;$i<count($listeNomItem);$i++){
+										if($listeNomItem[$i]==$nom){
+											$index=$i;
+										}
+									}
+
+									if($index!=(-1)){
+										echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/";
+										echo $stock-$listeNumberItem[$index]."\"/>";
+
+									}
+									else{
+										
+										echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+
+
+									}
+								}
+								else{
+									echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+
+								}
+								
 								echo "</div></td>";
 
                                 echo "<td><div class='col'>";

@@ -116,8 +116,9 @@ function AddToCart(indice){
 
     var itemNameDiv=document.getElementById("nom"+indice);
     var nomItem=itemNameDiv.title; //The name of the item
-
     if(!(num==0)){
+        //var string=encodeURI("../php/ajoutPanier.php?nomItem="+encodeURIComponent(nomItem)+"&stockToAdd="+num);
+        //string=string.replace(/'/g, encodeURIComponent('%27'));
         document.location.href="../php/ajoutPanier.php?nomItem="+nomItem+"&stockToAdd="+num;
 
     }
@@ -125,3 +126,11 @@ function AddToCart(indice){
 
 }
 
+function removeFromCart(indice){
+    document.location.href="../php/retirerPanier.php?emplacement="+indice;
+}
+
+function CommandingCheck(){
+    document.location.href="../php_pages/commandpage.php";
+
+}
