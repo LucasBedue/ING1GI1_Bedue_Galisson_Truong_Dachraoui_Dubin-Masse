@@ -1,5 +1,6 @@
 <!DOCTYPE php>
 <php>
+
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,34 +64,26 @@
 			<div class="top_menu_container">
 				<div class="top_menu">
 					<div class="top_menu_box top_menu_box1">
-						<a
-							href="./Physique.php"
-						>
+						<a href="./Physique.php">
 							<div class="top_menu_box top_menu_box1">
 								Physique
 							</div>
 						</a>
 					</div>
 					<div class="top_menu_box top_menu_box2">
-						<a
-							href="./Magique.php"
-						>
+						<a href="./Magique.php">
 							<div class="top_menu_box top_menu_box2">
 								Magique
 							</div>
 						</a>
 					</div>
 					<div class="top_menu_box top_menu_box3">
-						<a
-							href="./Tank.php"
-						>
+						<a href="./Tank.php">
 							<div class="top_menu_box top_menu_box3">Tank</div>
 						</a>
 					</div>
 					<div class="top_menu_box top_menu_box4">
-						<a
-							href="./Filtre.php"
-						>
+						<a href="./Filtre.php">
 							<div class="top_menu_box top_menu_box4">Recherche</div>
 						</a>
 					</div>
@@ -100,11 +93,7 @@
 			<div class="top_right_text">
 				<a class="text_color_yellow" href="./index.php">Accueil</a>
 				<div class="spacer">|</div>
-				<a
-					class="text_color_yellow"
-					href="./Contact.php"
-					>Nous contacter</a
-				>
+				<a class="text_color_yellow" href="./Contact.php">Nous contacter</a>
 			</div>
 
 			<div class="banner_title">L'Échoppe de Doran</div>
@@ -113,77 +102,46 @@
 			<div class="left_side">
 				<div class="central_left_top_box">
 					L'Échoppe de Doran
-					<a
-						href="./Panier.php"
-					>
+					<a href="./Panier.php">
 						<div class="central_left_top_bottom_text_box">
 							Votre panier
-							<img
-								class="shopping_cart"
-								src="./../img/shopping-cart-icon.png"
-							/>
+							<img class="shopping_cart" src="./../img/shopping-cart-icon.png" />
 						</div>
 					</a>
 				</div>
 				<div class="central_left_bottom_box">
-                    <a
-						href="./Boutique.php"
-					>
-						<div
-							class="central_left_bottom_text_box0"
-						>
+					<a href="./Boutique.php">
+						<div class="central_left_bottom_text_box0">
 							Notre boutique
 						</div>
 					</a>
-					<a
-						href="./Physique.php"
-					>
-						<div
-							class="central_left_bottom_text_box central_left_bottom_text_box1"
-						>
+					<a href="./Physique.php">
+						<div class="central_left_bottom_text_box central_left_bottom_text_box1">
 							Physique
 						</div>
 					</a>
 
-					<a
-						href="./Magique.php"
-					>
-						<div
-							class="central_left_bottom_text_box central_left_bottom_text_box2"
-						>
+					<a href="./Magique.php">
+						<div class="central_left_bottom_text_box central_left_bottom_text_box2">
 							Magique
 						</div>
 					</a>
 
-					<a
-						href="./Tank.php"
-					>
-						<div
-							class="central_left_bottom_text_box central_left_bottom_text_box3"
-						>
+					<a href="./Tank.php">
+						<div class="central_left_bottom_text_box central_left_bottom_text_box3">
 							Tank
 						</div>
 					</a>
-					<a
-						href="./Filtre.php"
-					>
-						<div
-							class="central_left_bottom_text_box0"
-						>
+					<a href="./Filtre.php">
+						<div class="central_left_bottom_text_box0">
 							Recherche
 						</div>
 					</a>
 
 					<div class="central_left_bottom_bottom_text_box">
-						<a class="text_color_black" href="./index.php"
-							>Accueil</a
-						>
+						<a class="text_color_black" href="./index.php">Accueil</a>
 						<div class="spacer">|</div>
-						<a
-							class="text_color_black"
-							href="./Contact.php"
-							>Nous contacter</a
-						>
+						<a class="text_color_black" href="./Contact.php">Nous contacter</a>
 					</div>
 				</div>
 			</div>
@@ -197,10 +155,21 @@
 					$utilisateur = "root";
 					$motDePasse = "";
 					$baseDeDonnees = "Echoppe_de_doran";
+					// Informations de connexion à la base de données
+					$serveur = "localhost";
+					$utilisateur = "root";
+					$motDePasse = "";
+					$baseDeDonnees = "Echoppe_de_doran";
 
 					// Connexion à la base de données
 					$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+					// Connexion à la base de données
+					$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
+					// Vérification de la connexion
+					if ($connexion->connect_error) {
+						die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+					}
 					// Vérification de la connexion
 					if ($connexion->connect_error) {
 						die("La connexion à la base de données a échoué : " . $connexion->connect_error);
@@ -322,9 +291,9 @@
 					</table>
 		
 
-					
-				</div>
+
 			</div>
+		</div>
 		</div>
 
 		<div class="bottom_banner">

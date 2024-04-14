@@ -1,11 +1,15 @@
 <?php
-//Get all value of "creation"
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
+    //Get all value of "creation"
+$nom = $_POST['LastName'];
+$prenom = $_POST['FirstName'];
+$entreprise = $_POST['entreprise'];
+$sexe=$_POST['sexe'];
+$date_naissance = $_POST['DOB'];
 $mail = $_POST['mail'];
-$date_naissance = $_POST['date_naissance'];
 $mdp = $_POST['mdp'];
-$role = $_POST['role'];
+$telephone=$_POST['telephone'];
+$fonction=$_POST['fonction'];
+$role = "Client";
 
 
 if (strpos($mail, '@') === false) {                         //set conditions to password and email
@@ -24,7 +28,7 @@ $fichier = fopen('../account_informations/accounts.txt', 'r+');
 while(!feof($fichier)) {                                        //check if the address is not already in use
     $line = fgets($fichier);
     $values = explode(";", $line);
-    $mail_fichier = isset($values[3]) ? trim($values[3]) : null;
+    $mail_fichier = isset($values[5]) ? trim($values[5]) : null;
 
     if ($mail_fichier==$mail) {
         fclose($fichier);
@@ -33,13 +37,15 @@ while(!feof($fichier)) {                                        //check if the a
     }
 }
 
-$fichier = fopen('../account_informations/accounts.txt', 'a');
-
-fwrite($fichier, $nom . ';' . $prenom . ';' . $date_naissance . ';' . $mail . ';' . $mdp . ';' . $role . ";\n");    //writes personal information to the file
 fclose($fichier);
 
-fclose($f);
+$fichier = fopen('../account_informations/accounts.txt', 'a');
+
+fwrite($fichier, $nom . ';' . $prenom . ';' . $entreprise . ';' . $sexe . ';' . $date_naissance . ';' . $mail . ';' . $mdp . ';' . $telephone . ';' . $fonction . ';' . $role . ";\n");    //writes personal information to the file
+fclose($fichier);
+
+
+
 header('Location: ../php_pages/Connexion.php');
 
 ?>
-
