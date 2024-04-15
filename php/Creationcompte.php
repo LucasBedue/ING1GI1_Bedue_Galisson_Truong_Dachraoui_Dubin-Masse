@@ -46,6 +46,6 @@ fclose($fichier);
 
 
 
-header('Location: ../php_pages/Connexion.php');
+header('Location: ../php_pages/Creationreussie.php');
 
 ?>
