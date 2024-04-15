@@ -46,7 +46,11 @@
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="../img/poro.png" class="poroicon" />
+		<div class="iconcontainer">
+				<a href="./index.php">
+					<img src="./../img/poro.png" class="poroicon" />
+				</a>
+			</div>
 			<?php 
 			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
 				echo "<a href=\"./Connexion.php\">";
@@ -415,6 +419,14 @@
 
 						$numberOfBoxs=0;
 
+						//Check if the item is already in the the session.
+						//If yes, reduce the amount of max-stock available
+						if((isset($_SESSION['cartItem']))||($_SESSION['cartItem']!="")){
+							$listeNomItem=explode(";",$_SESSION['cartItem']);
+							$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
+
+						}
+
                         
 						// Vérification s'il y a des résultats
 						if ($resultat->num_rows > 0) {
@@ -428,7 +440,6 @@
 								$stock = $row["stock"];
 								$prix = $row["prix"];
 								$image=$row["image"];
-                                $boolafficheur=0;//sert à confirmer l'affichage
 
                                 //Check les caractéristiques des items recherchés
                                 if($prixmin==""){
@@ -436,7 +447,10 @@
                                 }
                                 //...
                                 
+
 								
+								
+
                                 //Affichage de la ligne informative.
                                 if($numberOfBoxs==0){
                                     echo "<tr>";
@@ -473,7 +487,33 @@
 
                                 echo "<td><div class='col'>";
                                 echo "<input class = \"showStockTextField\" type=\"text\" id=\"showStockTextField$numberOfBoxs\" disabled value=\"0\"/>";
-								echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+
+								//
+								if(isset($listeNomItem)){
+									$index=-1;
+									for($i=0;$i<count($listeNomItem);$i++){
+										if($listeNomItem[$i]==$nom){
+											$index=$i;
+										}
+									}
+
+									if($index!=(-1)){
+										echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/";
+										echo $stock-$listeNumberItem[$index]."\"/>";
+
+									}
+									else{
+										
+										echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+
+
+									}
+								}
+								else{
+									echo "<input class = \"showMaxStockTextField\" type=\"text\" id=\"showMaxStockTextField$numberOfBoxs\" disabled value=\"/$stock\"/>";
+
+								}
+								
 								echo "</div></td>";
 
                                 echo "<td><div class='col'>";
@@ -513,8 +553,8 @@
 		
 						<div class="bottom_banner">
 			<div class="bottom_banner_left_text">
-				L'Echoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
-			</div>
+			<p>L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024</p>
+				<p>League of Legends et toutes les images utilisées appartiennent à Riot Games Inc.</p>			</div>
 			<div class="bottom_banner_right_text">
 				Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias
 				Galisson - Audrey Truong

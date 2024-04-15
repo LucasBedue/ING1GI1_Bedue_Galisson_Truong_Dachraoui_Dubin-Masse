@@ -1,68 +1,64 @@
-<!DOCTYPE php>
-<php>
-    <head>
-    <meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>L'Echoppe de Doran - Envoi de Contact</title>
-		<link rel="stylesheet" href="../css/shop.css" />
-		<link rel="stylesheet" href="../css/Connexion.css" />
-    </head>
+<?php
+header('Content-Type: text/html; charset=utf-8');
+session_start();
 
-    <body class="main_body">
-    <div class="top_banner">
-			<img src="./../img/poro.png" class="poroicon" />
-			<a
-				href="./Connexion.php"
-			>
-				<div class="top_left_text">Se connecter</div>
-			</a>
 
-            <div class="top_menu_container">
-				<div class="top_menu">
-					<div class="top_menu_box top_menu_box1">
-						<a
-							href="./Physique.php"
-						>
-							<div class="top_menu_box top_menu_box1">
-								Physique
-							</div>
-						</a>
-					</div>
-                    <div class="top_menu_box top_menu_box2">
-						<a
-							href="./Magique.php"
-						>
-							<div class="top_menu_box top_menu_box2">
-								Magique
-							</div>
-						</a>
-					</div>
-                    <div class="top_menu_box top_menu_box3">
-						<a
-							href="./Tank.php"
-						>
-							<div class="top_menu_box top_menu_box3">Tank</div>
-						</a>
-					</div>
-                    <div class="top_menu_box top_menu_box4">
-						<a
-							href="./Filtre.php"
-						>
-							<div class="top_menu_box top_menu_box4">Recherche</div>
-						</a>
-					</div>
-                </div>
-		    </div>
+$nom = $_POST['LastName'];
+$prenom = $_POST['FirstName'];
+$entreprise = $_POST['entreprise'];
+$sexe=$_POST['Sexe'];
+$date_naissance = $_POST['DOB'];
+$mail = $_POST['mail'];
+$telephone=$_POST['telephone'];
+$fonction=$_POST['fonction'];
+$sujet=$_POST['sujet'];
+$message=$_POST['message'];
 
-            <div class="top_right_text">
-				<a class="text_color_yellow" href="./index.php">Accueil</a>
-				<div class="spacer">|</div>
-				<a
-					class="text_color_yellow"
-					href="./Contact.php"
-					>Nous contacter</a
-				>
-			</div>
-    </div>
-    </body>
-</php>
+
+
+if (strpos($mail, '@') === false) {                         //set conditions to password and email
+    
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
+}
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+
+if(isset($_POST["contactbutton"])){
+
+		$email= new PHPMailer;
+	//Server settings										
+		$email->isSMTP();                                            //Send using SMTP
+		$email->Host       = 'smtp-mail.outlook.com';                //Set the SMTP server to send through
+		$email->SMTPAuth   = true;                                   //Enable SMTP authentication
+		$email->Username   = 'ganvi2dormir@outlook.fr';              //SMTP username
+		$email->Password   = 'ZzZzZzZz0000';                         //SMTP password
+		$email->SMTPSecure = 'tls';                                  //Enable implicit TLS encryption
+		$email->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`                                          // Send using SMTP
+	
+		//Recipients
+		
+		$email->setFrom('ganvi2dormir@outlook.fr');
+		$email->addAddress('matthiasgalisson@gmail.com');
+
+		//Content
+		$email->isHTML(true);
+		
+		$email->Subject = $sujet;
+		$email->Body=$message;
+	
+		$email->send();
+
+        header('Location: ../php_pages/MailSuccess.php');
+        exit();
+	}
+	else{
+        header('Location: ../php_pages/MailFail.php');
+        exit();
+    }
+?>
