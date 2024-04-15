@@ -7,6 +7,20 @@
 		<title>L'Echoppe de Doran - Contact</title>
 		<link rel="stylesheet" href="../css/shop.css" />
 		<link rel="stylesheet" href="../css/Connexion.css" />
+		
+		<script type="text/javascript">
+
+$(document).ready(function(){
+    $("form").on("submit", function(event){
+        event.preventDefault();
+ 
+        
+    });
+});
+
+
+		</script>	
+		
 	</head>
 
 	<body class="main_body">
@@ -113,7 +127,7 @@
 				<div class="right_container">
 					<div class="login">
 						<!--	Login form	-->
-						<form method="post" action="../php/EnvoiContact.php">
+						<form id="form" name="form" method="post" action="../php/EnvoiContact.php">
 							<table>
 								<tr>
 									<td class="row">
@@ -242,8 +256,10 @@
 							</table>
 							<br />
 							<div class="input">
-								<input class="button" type="submit" value="Envoyer" />
+								<input class="button" name="contactbutton" id="contactbutton" type="submit" value="Envoyer" />
 							</div>
+							<br />
+							<div name="errorfield" id="error_field"></div>
 						</form>
 					</div>
 
@@ -263,6 +279,7 @@
 
 
 
+        
 
 	</body>
 </php>
