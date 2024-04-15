@@ -37,7 +37,7 @@
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="../img/poro.png" class="poroicon" />
+			<img src="../img/poro.png" class="poroicon"/>
 			<a
 				href="./Connexion.php"
 			>
