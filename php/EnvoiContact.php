@@ -44,7 +44,7 @@ if(isset($_POST["contactbutton"])){
 		//Recipients
 		
 		$email->setFrom('ganvi2dormir@outlook.fr');
-		$email->addAddress('lucasbedue@gmail.com');
+		$email->addAddress('matthiasgalisson@gmail.com');
 
 		//Content
 		$email->isHTML(true);
