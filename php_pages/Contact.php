@@ -9,16 +9,32 @@
 		<link rel="stylesheet" href="../css/Connexion.css" />
 		
 		<script type="text/javascript">
-
+/*
 $(document).ready(function(){
     $("form").on("submit", function(event){
-        event.preventDefault();
- 
-        
+        event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
+
+        // Récupérer les données du formulaire
+        var formData = $(this).serialize();
+
+        // Envoyer la requête Ajax
+        $.ajax({
+            type: "POST",
+            url: "../php/EnvoiContact.php",
+            data: formData,
+            success: function(response){
+                // Afficher la réponse du serveur
+                alert(response);
+            },
+            error: function(xhr, status, error){
+                // Gérer les erreurs
+                console.error(xhr.responseText);
+            }
+        });
     });
 });
 
-
+*/
 		</script>	
 		
 	</head>
@@ -30,11 +46,16 @@ $(document).ready(function(){
 					<img src="./../img/poro.png" class="poroicon" />
 				</a>
 			</div>
-			<a
-				href="./Connexion.php"
-			>
-				<div class="top_left_text">Se connecter</div>
-			</a>
+			<?php 
+			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
+				echo "<a href=\"./Connexion.php\">";
+				echo "<div class=\"top_left_text\">Se connecter</div></a>";
+			}
+			else{
+				echo "<a href=\"../php/deconnexion.php\">";
+				echo "<div class=\"top_left_text\">Se déconnecter</div></a>";
+			}
+				?>
 
 			<div class="top_menu_container">
 				<div class="top_menu">

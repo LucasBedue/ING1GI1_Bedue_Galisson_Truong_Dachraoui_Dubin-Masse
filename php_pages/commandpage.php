@@ -46,11 +46,16 @@
 	<body class="main_body">
 		<div class="top_banner">
 			<img src="./../img/poro.png" class="poroicon" />
-			<a
-				href="./Connexion.php"
-			>
-				<div class="top_left_text">Se connecter</div>
-			</a>
+			<?php 
+			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
+				echo "<a href=\"./Connexion.php\">";
+				echo "<div class=\"top_left_text\">Se connecter</div></a>";
+			}
+			else{
+				echo "<a href=\"../php/deconnexion.php\">";
+				echo "<div class=\"top_left_text\">Se déconnecter</div></a>";
+			}
+				?>
 
 			<div class="top_menu_container">
 				<div class="top_menu">
@@ -185,11 +190,89 @@
 				</div>
 				<table class="right_bottom_container">
 				<?php
-?>
-					
-</table>
+                    if (!isset($_SESSION['role'])){
+                        echo "&nbsp &nbsp Veuillez vous connecter pour avoir accès à votre panier";
 
-</div>
+                    }
+                    else{
+                        if((!isset($_SESSION['cartItem']))||($_SESSION['cartItem']=="")){
+							echo "<p>Panier Vide</p>";
+						}
+						else{
+
+							
+						
+						$listeNomItem=explode(";",$_SESSION['cartItem']);
+						$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
+
+                        // Informations de connexion à la base de données
+						$serveur = "localhost"; 
+						$utilisateur = "root"; 
+						$motDePasse = ""; 
+						$baseDeDonnees = "Echoppe_de_doran"; 
+
+						
+
+
+						// Connexion à la base de données
+						$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
+
+						// Vérification de la connexion
+						if ($connexion->connect_error) {
+							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+						}
+
+						// Requête SQL pour récupérer les items 
+                        $sql = "SELECT * FROM item";
+                        
+						$resultat = $connexion->query($sql);
+
+						$numberOfBoxs=0;//Our count
+
+						for($i=0;$i<count($listeNomItem);$i++){
+							$readableNomItem=str_replace('%27','%27'.'%27',$listeNomItem[$i]);
+    						$readableNomItem=mysqli_real_escape_string($connexion, $readableNomItem);
+							$totalprice=0;
+							$sql = "SELECT * FROM item WHERE nom='$readableNomItem'";
+							$resultat = $connexion->query($sql);
+							if ($resultat->num_rows > 0) {//if the item exist
+								$row = $resultat->fetch_assoc();
+								$nom = $row["nom"];
+								$stats_pv = $row["stats_pv"];
+								$stats_ap = $row["stats_ap"];
+								$stats_ad = $row["stats_ad"];
+								$stock = $row["stock"];
+								$prix = $row["prix"];
+								$image=$row["image"];
+
+								$totalprice+=$prix;
+								
+							}
+
+
+						}
+
+                        	echo "<tr><td>";
+							echo "Prix Total :" . $totalprice;
+							echo "</td></tr>";
+							echo "<tr>";
+							
+							echo "<td></td>";
+							echo "<td></td>";
+							echo "<td></td>";
+							echo "<td></td>";
+							echo "<td><button class=\"button\" id=\"Command\"  type=\"button\" onclick=\"CommandingCheck()\">Finaliser commande</button></td></tr>";
+						} 
+
+
+					}
+                    
+					
+                ?>
+					
+				</table>
+				
+			</div>
 <div class="button_container2">
 <button class="button2" type="button">Commander</button>
 </div>

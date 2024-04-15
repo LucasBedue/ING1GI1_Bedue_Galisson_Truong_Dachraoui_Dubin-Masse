@@ -17,11 +17,16 @@
 					<img src="./../img/poro.png" class="poroicon" />
 				</a>
 			</div>
-			<a
-				href="./Connexion.php"
-			>
-				<div class="top_left_text">Se connecter</div>
-			</a>
+			<?php 
+			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
+				echo "<a href=\"./Connexion.php\">";
+				echo "<div class=\"top_left_text\">Se connecter</div></a>";
+			}
+			else{
+				echo "<a href=\"../php/deconnexion.php\">";
+				echo "<div class=\"top_left_text\">Se déconnecter</div></a>";
+			}
+				?>
 
 			<div class="top_menu_container">
 				<div class="top_menu">
