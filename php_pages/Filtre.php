@@ -385,6 +385,8 @@
 						$baseDeDonnees = "Echoppe_de_doran"; 
 
                         //Information de recherche sur la base de données
+						$request_string="";
+						$requets_count=0;
                         $searchname=$_GET["searchname"];
                         $itemtype=$_GET["type"];
                         $prixmin=$_GET["prixmin"];
@@ -396,8 +398,6 @@
                         $APmin=$_GET["APmin"];
                         $APmax=$_GET["APmax"];
 
-
-
 						// Connexion à la base de données
 						$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
@@ -406,17 +406,106 @@
 							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 						}
 
-						// Requête SQL pour récupérer les items 
-                        
-                        if ($itemtype==""){
-                            $sql = "SELECT * FROM item";
-                        }
-                        else{
-                            $sql = "SELECT * FROM item WHERE categorie = '$itemtype'";
-                        }
-						
-						$resultat = $connexion->query($sql);
 
+						if($searchname!=""){
+
+							$readableNomItem=str_replace('%27','%27'.'%27',$searchname);
+							$readableNomItem=mysqli_real_escape_string($connexion, $readableNomItem);
+							
+							$request_string=$request_string . " WHERE nom LIKE '%$readableNomItem%'";
+							$requets_count++;
+						}
+						if($itemtype!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE categorie = '$itemtype'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND categorie = '$itemtype'";
+							}
+						}
+						if($prixmin!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE prix >= '$prixmin'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND prix >= '$prixmin'";
+							}
+						}
+						if($prixmax!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE prix <= '$prixmax'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND prix <= '$prixmax'";
+							}
+						}
+						if($HPmin!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE stats_pv >= '$HPmin'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND stats_pv >= '$HPmin'";
+							}
+						}
+						if($HPmax!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE stats_pv <= '$HPmax'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND stats_pv <= '$HPmax'";
+							}
+						}
+						if($ADmin!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE stats_ad >= '$ADmin'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND stats_ad >= '$ADmin'";
+							}
+						}
+						if($ADmax!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE stats_ad <= '$ADmax'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND stats_ad <= '$ADmax'";
+							}
+						}
+						if($APmin!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE stats_ap >= '$APmin'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND stats_ap >= '$APmin'";
+							}
+						}
+						if($APmax!=""){
+							if($requets_count==0){
+								$request_string=$request_string." WHERE stats_ap <= '$APmax'";
+								$requets_count++;
+
+							}else{
+								$request_string=$request_string." AND stats_ap <= '$APmax'";
+							}
+						}
+						if($requets_count==0){
+							$request_string=$request_string." WHERE stock > 0";
+							$requets_count++;
+
+						}else{
+							$request_string=$request_string." AND stock > 0";
+						}
+
+						$sql = "SELECT * FROM item".$request_string;
+                        $resultat = $connexion->query($sql);
 						$numberOfBoxs=0;
 
 						//Check if the item is already in the the session.
@@ -424,10 +513,8 @@
 						if((isset($_SESSION['cartItem']))||($_SESSION['cartItem']!="")){
 							$listeNomItem=explode(";",$_SESSION['cartItem']);
 							$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
-
 						}
 
-                        
 						// Vérification s'il y a des résultats
 						if ($resultat->num_rows > 0) {
 							// Parcourir les lignes de résultat
@@ -441,16 +528,6 @@
 								$prix = $row["prix"];
 								$image=$row["image"];
 
-                                //Check les caractéristiques des items recherchés
-                                if($prixmin==""){
-                                    $prixmin=0;
-                                }
-                                //...
-                                
-
-								
-								
-
                                 //Affichage de la ligne informative.
                                 if($numberOfBoxs==0){
                                     echo "<tr>";
@@ -463,9 +540,6 @@
                                 echo "</tr>";
                                 }
                                 
-
-
-
                                 // Affichage de chaque item dans une ligne du tableau
 
 								echo "<tr>";

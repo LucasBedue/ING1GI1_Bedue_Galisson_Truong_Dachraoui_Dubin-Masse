@@ -207,6 +207,7 @@
 						
 						$listeNomItem=explode(";",$_SESSION['cartItem']);
 						$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
+						$prixtotal=0;
 
                         // Informations de connexion à la base de données
 						$serveur = "localhost"; 
@@ -246,6 +247,7 @@
 								$stats_ad = $row["stats_ad"];
 								$stock = $row["stock"];
 								$prix = $row["prix"];
+								$prixtotal=$prixtotal+($prix*$listeNumberItem[$numberOfBoxs]);
 								$image=$row["image"];
 
 								if($numberOfBoxs==0){//for the first item shown
@@ -292,8 +294,8 @@
 							
 							echo "<tr>";
 							echo "<td></td>";
-							echo "<td></td>";
-							echo "<td></td>";
+							echo "<td>Prix total : </td>";
+							echo "<td>$prixtotal $</td>";
 							echo "<td></td>";
 							echo "<td></td>";
 							echo "<td><button class=\"button\" id=\"Command\"  type=\"button\" onclick=\"CommandingCheck()\">Finaliser commande</button></td></tr>";

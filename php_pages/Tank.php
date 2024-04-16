@@ -176,7 +176,7 @@
 					}
 
 					// Requête SQL pour récupérer les items magiques
-					$sql = "SELECT * FROM item WHERE categorie = 'Tank'";
+					$sql = "SELECT * FROM item WHERE categorie = 'Tank' AND stock > 0";
 					$resultat = $connexion->query($sql);
 					$numberOfBoxs=0;
 

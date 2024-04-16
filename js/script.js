@@ -30,7 +30,7 @@ function changeTheDiv(indicediv){
         buttonKart.textContent="Cacher Stock";
 
         
-        var othersbutton=document.getElementsByClassName("button");
+        var othersbutton=document.getElementsByClassName("showStockTextField");
         for(var i=0;i<othersbutton.length;i++){
             if(i!=indicediv){
                 hiddenDiv=hiddenDiv = document.getElementById("hiddenDiv"+i);
@@ -131,6 +131,8 @@ function removeFromCart(indice){
 }
 
 function CommandingCheck(){
+    
     document.location.href="../php_pages/commandpage.php";
 
 }
+

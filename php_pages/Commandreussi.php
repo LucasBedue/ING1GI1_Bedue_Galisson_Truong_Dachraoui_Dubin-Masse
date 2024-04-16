@@ -45,8 +45,11 @@
 
 	<body class="main_body">
 		<div class="top_banner">
-			<img src="./../img/poro.png" class="poroicon" />
-			<?php 
+		<div class="iconcontainer">
+				<a href="./index.php">
+					<img src="./../img/poro.png" class="poroicon" />
+				</a>
+			</div>			<?php 
 			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
 				echo "<a href=\"./Connexion.php\">";
 				echo "<div class=\"top_left_text\">Se connecter</div></a>";
@@ -114,7 +117,7 @@
 						href="./Panier.php"
 					>
 						<div class="central_left_top_bottom_text_box">
-						Votre Panier 
+							Votre panier
 							<img
 								class="shopping_cart"
 								src="./../img/shopping-cart-icon.png"
@@ -186,117 +189,27 @@
 			</div>
 			<div class="right_side">
 				<div class="right_top_text">
-					Informations de commande
+                Commande Validé!
 				</div>
-				<table class="right_bottom_container">
-					
-				<?php
-                    if (!isset($_SESSION['role'])){
-                        echo "&nbsp &nbsp Veuillez vous connecter pour avoir accès à votre panier";
-
-                    }
-                    else{
-                        if((!isset($_SESSION['cartItem']))||($_SESSION['cartItem']=="")){
-							echo "<p>Panier Vide</p>";
-						}
-						else{
-
-						$listeNomItem=explode(";",$_SESSION['cartItem']);
-						$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
-						$prixtotal=0;
-                        // Informations de connexion à la base de données
-						$serveur = "localhost"; 
-						$utilisateur = "root"; 
-						$motDePasse = ""; 
-						$baseDeDonnees = "Echoppe_de_doran"; 
-
-						// Connexion à la base de données
-						$connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
-
-						// Vérification de la connexion
-						if ($connexion->connect_error) {
-							die("La connexion à la base de données a échoué : " . $connexion->connect_error);
-						}
-
-						// Requête SQL pour récupérer les items 
-                        $sql = "SELECT * FROM item";
-                        
-						$resultat = $connexion->query($sql);
-
-						$numberOfBoxs=0;//Our count
-
-						for($i=0;$i<count($listeNomItem);$i++){
-							$readableNomItem=str_replace('%27','%27'.'%27',$listeNomItem[$i]);
-    						$readableNomItem=mysqli_real_escape_string($connexion, $readableNomItem);
-    
-							$sql = "SELECT * FROM item WHERE nom='$readableNomItem'";
-							$resultat = $connexion->query($sql);
-							if ($resultat->num_rows > 0) {//if the item exist
-								$row = $resultat->fetch_assoc();
-								$nom = $row["nom"];
-								$stats_pv = $row["stats_pv"];
-								$stats_ap = $row["stats_ap"];
-								$stats_ad = $row["stats_ad"];
-								$stock = $row["stock"];
-								$prix = $row["prix"];
-								$prixtotal=$prixtotal+($prix*$listeNumberItem[$numberOfBoxs]);
-								$image=$row["image"];
-
-								$numberOfBoxs++;
-							}
-
-						}
-
-						echo "<form method=\"post\" action=\"../php/command.php\">";
-						echo "<tr><td class=\"row\">";
-						echo "<label class=\"creation_text\">Numéro de carte de crédit :</label>";
-						echo "</td><td class=\"row\">";
-						echo "<input class = \"input_box\" pattern=\"[0-9]{0,16}\" type=\"text\" name=\"credit_card\" id=\"credit_card\" required />";
-						echo "</td></tr><tr>";
-						echo "<td class=\"row\">";
-						echo "<label class=\"creation_text\">Adresse de livraison:</label>";
-						echo "</td><td class=\"row\">";
-						echo "<input class = \"input_box\" type=\"text\" name=\"adresse_livraison\" id=\"adresse_livraison\" required />";
-						echo "</td></tr>";
-                    
-						echo "<tr><td>";
-						echo "Prix total : ".$prixtotal;
-						echo "</td></tr>";
-						echo "";
-							echo "<tr>";
-							echo "<td></td>";
-							echo "<td></td>";
-							echo "<td></td>";
-							echo "<td></td>";
-							echo "<td></td>";
-							echo "<td><button class=\"button\" id=\"Command\"  type=\"submit\" >Finaliser commande</button></td></tr>";
-						echo "</form>";
-						} 
-
-
-					}
-                    
-					
-                ?>
-					
-				</table>
+				<div class="right_bottom_container">
+                </div>
 				
 			</div>
-<div class="button_container2">
-<button class="button2" type="button">Commander</button>
-</div>
-</div>
+			<div class="button_container2">
+				<button class="button2" type="button">Commander</button>
+			</div>
+		</div>
 
-<div class="bottom_banner">
-<div class="bottom_banner_left_text">
-L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024
-</div>
-<div class="bottom_banner_right_text">
-Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias
-Galisson - Audrey Truong
-</div>
-</div>
-<script type="text/javascript" src="../js/script.js"></script>	
+		<div class="bottom_banner">
+			<div class="bottom_banner_left_text">
+			<p>L'Échoppe de Doran - Projet DevWeb ING1 GI1 - 2023/2024</p>
+				<p>League of Legends et toutes les images utilisées appartiennent à Riot Games Inc.</p>			</div>
+			<div class="bottom_banner_right_text">
+				Lucas Bédué - Elyes Dachraoui - Maxime Dubin-Massé - Matthias
+				Galisson - Audrey Truong
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/script.js"></script>	
 
-</body>
+	</body>
 </php>
