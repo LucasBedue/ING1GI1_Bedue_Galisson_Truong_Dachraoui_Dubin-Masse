@@ -172,11 +172,8 @@ function AddToCart(indice){
          
     });
 
-
-    
     }
     
-
 }
 
 
@@ -186,8 +183,6 @@ function removeFromCart(indice){
 }
 
 function CommandingCheck(){
-    
     document.location.href="../php_pages/commandpage.php";
-
 }
 

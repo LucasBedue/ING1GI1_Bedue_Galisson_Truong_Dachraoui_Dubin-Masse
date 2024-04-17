@@ -50,7 +50,7 @@ if(isset($_POST["contactbutton"])){
 		$email->isHTML(true);
 		
 		$email->Subject = $sujet;
-		$email->Body=$message;
+		$email->Body="Nom : ".$nom."\nPrénom: ".$prenom."\nEntreprise: ".$entreprise."\n Sexe : ".$sexe."\nDate de naissance :".$date_naissance."\nMail : ".$mail."\nTéléphone : ".$telephone."\nFonction : ".$fonction."\n".$message;
 	
 		$email->send();
 

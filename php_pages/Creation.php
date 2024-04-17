@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="../css/shop.css" />
 		
 		<link rel="stylesheet" href="../css/Connexion.css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>	
 
 	</head>
 
