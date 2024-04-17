@@ -149,6 +149,7 @@
 
 			<div class="right_side">
 				<div class="right_top_text">Notre boutique</div>
+				<div class="right_text_container">Voici pour vous une sélection d'objet</div>
 				<table class="right_bottom_container">
 					
 					<?php

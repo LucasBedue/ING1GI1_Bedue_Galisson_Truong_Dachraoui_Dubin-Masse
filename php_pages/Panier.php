@@ -194,12 +194,12 @@
 				<table class="right_bottom_container">
 				<?php
                     if (!isset($_SESSION['role'])){
-                        echo "&nbsp &nbsp Veuillez vous connecter pour avoir accès à votre panier";
+                        echo "<div class=\"right_text_container\">&nbsp &nbsp Veuillez vous connecter pour avoir accès à votre panier</div>";
 
                     }
                     else{
                         if((!isset($_SESSION['cartItem']))||($_SESSION['cartItem']=="")){
-							echo "<p>Panier Vide</p>";
+							echo "<div class=\"right_text_container\"><p>Panier Vide</p></div>";
 						}
 						else{
 
