@@ -182,7 +182,7 @@
 
 					//Check if the item is already in the the session.
 					//If yes, reduce the amount of max-stock available
-					if((isset($_SESSION['cartItem']))||($_SESSION['cartItem']!="")){
+					if(isset($_SESSION['cartItem'])){
 						$listeNomItem=explode(";",$_SESSION['cartItem']);
 						$listeNumberItem=explode(";",$_SESSION['cartNumberItem']);
 
