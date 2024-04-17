@@ -189,7 +189,7 @@
 			</div>
 			<div class="right_side">
 				<div class="right_top_text">
-                Commande Validé!
+                Commande Validée!
 				</div>
 				<div class="right_bottom_container">
                 </div>
