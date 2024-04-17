@@ -145,7 +145,7 @@
 				<div class="right_top_text">
 					Informations de commande
 				</div>
-
+				<div class="right_text_container">
 				<table class="right_bottom_container">
 
 					<?php
@@ -203,22 +203,22 @@
 
 							}
 
-							echo "<form method=\"post\" action=\"../php/command.php\">";
-							echo "<tr><td class=\"row\">";
-							echo "<label class=\"creation_text\">Numéro de carte de crédit :</label>";
-							echo "</td><td class=\"row\">";
-							echo "<input class = \"input_box\" pattern=\"[0-9]{0,16}\" type=\"text\" name=\"credit_card\" id=\"credit_card\" required />";
-							echo "</td></tr><tr>";
-							echo "<td class=\"row\">";
-							echo "<label class=\"creation_text\">Adresse de livraison:</label>";
-							echo "</td><td class=\"row\">";
-							echo "<input class = \"input_box\" type=\"text\" name=\"adresse_livraison\" id=\"adresse_livraison\" required />";
-							echo "</td></tr>";
-
-							echo "<tr><td>";
-							echo "Prix total : " . $prixtotal;
-							echo "</td></tr>";
-							echo "";
+						echo "<form class=\"right_text_container\" method=\"post\" action=\"../php/command.php\">";
+						echo "<tr><td class=\"row\">";
+						echo "<label class=\"creation_text\">Numéro de carte de crédit :</label>";
+						echo "</td><td class=\"row\">";
+						echo "<input class = \"input_box\" pattern=\"[0-9]{0,16}\" type=\"text\" name=\"credit_card\" id=\"credit_card\" required />";
+						echo "</td></tr><tr>";
+						echo "<td class=\"row\">";
+						echo "<label class=\"creation_text\">Adresse de livraison:</label>";
+						echo "</td><td class=\"row\">";
+						echo "<input class = \"input_box\" type=\"text\" name=\"adresse_livraison\" id=\"adresse_livraison\" required />";
+						echo "</td></tr>";
+                    
+						echo "<tr><td>";
+						echo "Prix total : ".$prixtotal;
+						echo "</td></tr>";
+						echo "";
 							echo "<tr>";
 							echo "<td></td>";
 							echo "<td></td>";
@@ -236,12 +236,13 @@
 					?>
 
 				</table>
-
-
-				<div class="button_container2">
-					<button class="button2" type="button">Commander</button>
 				</div>
+				
 			</div>
+<div class="button_container2">
+<button class="button2" type="button">Commander</button>
+</div>
+</div>
 
 			<div class="bottom_banner">
 				<div class="bottom_banner_left_text">
