@@ -188,6 +188,7 @@
 				<div class="right_top_text">
 					Informations de commande
 				</div>
+				<div class="right_text_container">
 				<table class="right_bottom_container">
 					
 				<?php
@@ -247,7 +248,7 @@
 
 						}
 
-						echo "<form method=\"post\" action=\"../php/command.php\">";
+						echo "<form class=\"right_text_container\" method=\"post\" action=\"../php/command.php\">";
 						echo "<tr><td class=\"row\">";
 						echo "<label class=\"creation_text\">Numéro de carte de crédit :</label>";
 						echo "</td><td class=\"row\">";
@@ -280,6 +281,7 @@
                 ?>
 					
 				</table>
+				</div>
 				
 			</div>
 <div class="button_container2">
