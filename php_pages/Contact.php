@@ -2,6 +2,41 @@
 <php>
 
 	<head>
+	<?php // To start or restore the session
+			session_start();
+
+			// To check if the last activity timestamp exists in the session
+			if (isset($_SESSION['last_activity'])) {
+				// Inactivity time in seconds (15 minutes = 900 seconds)
+				$inactive_duration = 900;
+
+				// Time count since last activity
+				$elapsed_time = time() - $_SESSION['last_activity'];
+
+				// Check if user has been inactive for more than 15 minutes
+				if ($elapsed_time > $inactive_duration) {
+					// Destroys the session
+					session_destroy();
+					
+					// Redirects the user to the logout page
+					header("Location: ../php/deconnexion.php");
+					exit;
+				}
+			}
+
+			// Records the current amount of time in the session
+			$_SESSION['last_activity'] = time();
+
+			/*
+			//if not already connected, kick you out
+			if (!isset($_SESSION['role']) || $_SESSION['role'] !== "Client") {
+				echo '<script>alert("Veuillez vous connecter pour accéder à cette page.");</script>';
+				echo '<script>window.location.href = "./Connexion.php";</script>';
+				exit();
+			}
+			*/
+			
+			?>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>L'Echoppe de Doran - Contact</title>

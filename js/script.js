@@ -109,22 +109,77 @@ function showpicture(indicepicture){
     
 }
 
+
+
+
+
 function AddToCart(indice){
+    
     var textInputShow = document.getElementById("showStockTextField"+indice);
     var num=parseInt(textInputShow.value); //The stock
 
+    var stockmaxdiv=document.getElementById("showMaxStockTextField"+indice);
+    var textstockmaxdiv=stockmaxdiv.value;
+    textstockmaxdiv=textstockmaxdiv.replace("/","");
+    var stockmax=parseInt(textstockmaxdiv);//the maximal stock
 
     var itemNameDiv=document.getElementById("nom"+indice);
     var nomItem=itemNameDiv.title; //The name of the item
+
+    var errorfield=document.getElementById("messagefield"+indice);//the field containing the error message
+
+
+    /*
     if(!(num==0)){
         //var string=encodeURI("../php/ajoutPanier.php?nomItem="+encodeURIComponent(nomItem)+"&stockToAdd="+num);
         //string=string.replace(/'/g, encodeURIComponent('%27'));
         document.location.href="../php/ajoutPanier.php?nomItem="+nomItem+"&stockToAdd="+num;
 
     }
+    */
+    if(num>stockmax){
+        errorfield.innerHTML="<p>Commandez moins d'objets.</p>";
 
+    }
+    else if(!(num==0)){
+    
+    $.ajax({url: "../php/ajoutPanier.php",type: 'POST',data: {nomItem: nomItem, stockToAdd: num},
+        success: function(response){
+            var res=JSON.parse(response);
+            if(res.success==true){
+                stockmaxdiv.value="/"+(stockmax-num);
+                errorfield.innerHTML="<p>Objet rajouté au panier.</p>";
+
+            }
+
+        },
+        error : function(response){
+            var ress=JSON.parse(response);
+
+            if(ress.stockproblem==true){
+                errorfield.innerHTML="<p>Il n'y a plus de stock. Veuillez rafraichir la page</p>";
+            }
+            else if(ress.connectionprob==true){
+                errorfield.innerHTML="<p>Connectez vous pour avoir accès au panier.</p>";
+
+            }
+            else{
+                errorfield.innerHTML="<p>Erreur de serveur. Le produit n'a pas pu être ajouté.</p>";
+
+            }
+
+        }
+         
+    });
+
+
+    
+    }
+    
 
 }
+
+
 
 function removeFromCart(indice){
     document.location.href="../php/retirerPanier.php?emplacement="+indice;
