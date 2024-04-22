@@ -2,7 +2,6 @@
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-
 $nom = $_POST['LastName'];
 $prenom = $_POST['FirstName'];
 $entreprise = $_POST['entreprise'];
@@ -13,8 +12,6 @@ $telephone=$_POST['telephone'];
 $fonction=$_POST['fonction'];
 $sujet=$_POST['sujet'];
 $message=$_POST['message'];
-
-
 
 if (strpos($mail, '@') === false) {                         //set conditions to password and email
     
@@ -32,7 +29,7 @@ require 'phpmailer/src/SMTP.php';
 if(isset($_POST["contactbutton"])){
 
 		$email= new PHPMailer;
-	//Server settings										
+		//Server settings										
 		$email->isSMTP();                                            //Send using SMTP
 		$email->Host       = 'smtp-mail.outlook.com';                //Set the SMTP server to send through
 		$email->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -40,7 +37,7 @@ if(isset($_POST["contactbutton"])){
 		$email->Password   = 'ZzZzZzZz0000';                         //SMTP password
 		$email->SMTPSecure = 'tls';                                  //Enable implicit TLS encryption
 		$email->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`                                          // Send using SMTP
-	
+
 		//Recipients
 		
 		$email->setFrom('ganvi2dormir@outlook.fr');
@@ -49,8 +46,18 @@ if(isset($_POST["contactbutton"])){
 		//Content
 		$email->isHTML(true);
 		
+		switch ($sexe) {
+			case "M":
+				$sexe='Homme';
+				break;
+			case "F":
+				$sexe='Femme';
+				break;
+			default:
+		}
+
 		$email->Subject = $sujet;
-		$email->Body="Nom : ".$nom."\nPrénom: ".$prenom."\nEntreprise: ".$entreprise."\n Sexe : ".$sexe."\nDate de naissance :".$date_naissance."\nMail : ".$mail."\nTéléphone : ".$telephone."\nFonction : ".$fonction."\n".$message;
+		$email->Body="Nom : ".$nom."<br> Prénom: ".$prenom."<br>Entreprise: ".$entreprise."<br>Sexe : ".$sexe."<br>Date de naissance :".$date_naissance."<br>Mail : ".$mail."<br>Téléphone : ".$telephone."<br><br>Fonction : ".$fonction."<br><br>".$message;
 	
 		$email->send();
 
