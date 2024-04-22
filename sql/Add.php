@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un élément</title>
+    <?php
+			session_start();
+            if(isset($_SESSION['role'])){
+				if($_SESSION['role'] !== "Admin"){
+					header("Location: ../php/deconnexion.php");
+					exit;
+				}
+			}
+
+    ?>
 </head>
 <body>
+    <a href="../php_pages/index.php">Retour au site</a>
     <h2>Ajouter un élément</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
         <label for="nom">Nom :</label><br>
@@ -90,5 +101,97 @@
         $conn->close();
     }
     ?>
+
+<h2>Retirer un élément</h2>
+<label for="nom">Nom :</label><br>
+        <input type="text" id="nomaretirer" name="nomaretirer" ><br><br>
+<div id="errorretirer" name="errorretirer"> </div>
+<button id="buttonretirer" name="buttonretirer" onclick="retirer()">Retirer</button>
+
+<h2>Fixer stock d'un élément</h2>
+<label for="nom">Nom :</label><br>
+        <input type="text" id="nomafixer" name="nomafixer" ><br><br>
+
+<label for="stock">Nouveau Stock :</label><br>
+        <input type="number" id="newstock" name="newstock" ><br><br>
+        <button id="buttonfixer" name="buttonfixer" onclick="fixer()">Fixer stock</button>
+
+        <div id="errorrfixer" name="errorrfixer"> </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function retirer(){
+            var nomAretirer=(document.getElementById("nomaretirer")).value;
+            var diverror=document.getElementById("errorretirer")
+            if(nomAretirer==""){
+                diverror.innerHTML="<p>Veuillez entrer le nom d'un objet.</p>";
+            }
+            else{
+                $.ajax({url: "./Del.php",type: 'POST',data: {delete_item_nom: nomAretirer, },
+        success: function(response){
+            var res=JSON.parse(response);
+            if(res.successDelete==true){
+                
+                diverror.innerHTML="<p>Objet retiré avec succès.</p>";
+
+            }
+
+        },
+        error : function(response){
+            var ress=JSON.parse(response);
+
+            if(ress.error==true){
+                diverror.innerHTML="<p>Probleme lors du changement. Vérifier existence de l'objet.</p>";
+            }
+            
+
+        }
+         
+    });
+            }
+        }
+
+        function fixer(){
+            var nomAfixer=(document.getElementById("nomafixer")).value;
+            var newstock=(document.getElementById("newstock")).value;
+            var diverror=document.getElementById("errorrfixer")
+            if(nomAfixer==""){
+                diverror.innerHTML="<p>Veuillez entrer le nom d'un objet.</p>";
+            }
+            else if(newstock==""){
+                diverror.innerHTML="<p>Veuillez entrer une quantité positive d'objets</p>";
+
+            }
+            else{
+                $.ajax({url: "./Del.php",type: 'POST',data: {item_nom: nomAfixer, new_quantity: newstock},
+        success: function(response){
+            var res=JSON.parse(response);
+            if(res.successfix==true){
+                
+                diverror.innerHTML="<p>Quantité mise à jour</p>";
+
+            }
+
+        },
+        error : function(response){
+            var ress=JSON.parse(response);
+
+            if(ress.error==true){
+                diverror.innerHTML="<p>Probleme lors du changement. Vérifier existence de l'objet.</p>";
+            }
+            
+
+        }
+         
+    });
+            }
+        }
+    
+    </script>
+
+
 </body>
 </html>

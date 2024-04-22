@@ -26,6 +26,13 @@
 				echo "<a href=\"../php/deconnexion.php\">";
 				echo "<div class=\"top_left_text\">Se déconnecter</div></a>";
 			}
+			if(isset($_SESSION['role'])){
+				if($_SESSION['role'] == "Admin"){
+					echo "<a href=\"../sql/Add.php\">";
+					echo "<div class=\"top_left_text\">Gérer stock</div></a>";
+
+				}
+			}
 				?>
 
 			<div class="top_menu_container">
@@ -121,7 +128,7 @@
 							<table>
 								<tr>
 									<td class="row">
-										<label class="creation_text">Connexion :</label>
+										<label class="creation_text">Identifiant :</label>
 									</td>
 									<td>
 										<input class="input_box" type="text" name="mail" id="mail" required />

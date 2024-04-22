@@ -20,7 +20,24 @@
 			<a
 				href="./Connexion.php"
 			>
-				<div class="top_left_text">Se connecter</div>
+			</div>
+			<?php 
+			if (!isset($_SESSION['role']) || (($_SESSION['role'] !== "Client") && ($_SESSION['role'] !== "Admin"))) {
+				echo "<a href=\"./Connexion.php\">";
+				echo "<div class=\"top_left_text\">Se connecter</div></a>";
+			}
+			else{
+				echo "<a href=\"../php/deconnexion.php\">";
+				echo "<div class=\"top_left_text\">Se déconnecter</div></a>";
+			}
+			if(isset($_SESSION['role'])){
+				if($_SESSION['role'] == "Admin"){
+					echo "<a href=\"../sql/Add.php\">";
+					echo "<div class=\"top_left_text\">Gérer stock</div></a>";
+
+				}
+			}
+				?>
 			</a>
 
 			<div class="top_menu_container">
