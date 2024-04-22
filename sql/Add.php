@@ -17,6 +17,7 @@
 </head>
 <body>
     <a href="../php_pages/index.php">Retour au site</a>
+    <a href="./Lire_Data.php">Voir stock</a>
     <h2>Ajouter un élément</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
         <label for="nom">Nom :</label><br>

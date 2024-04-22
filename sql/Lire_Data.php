@@ -1,4 +1,13 @@
 <?php
+session_start();
+if(isset($_SESSION['role'])){
+    if($_SESSION['role'] !== "Admin"){
+        header("Location: ../php/deconnexion.php");
+        exit;
+    }
+}
+echo "<a href=\"./Add.php\">Retour au panel de contrôle</a><br>";
+
 // Connexion à la base de données
 $servername = "localhost";
 $username = "root";
