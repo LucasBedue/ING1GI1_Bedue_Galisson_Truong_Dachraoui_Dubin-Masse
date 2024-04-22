@@ -58,9 +58,14 @@
         // Récupérer et nettoyer la catégorie
         $categorie = htmlspecialchars($_POST['categorie']);
       
+        $serveur = "localhost"; 
+        $utilisateur = "root"; 
+        $motDePasse = ""; 
+        $baseDeDonnees = "Echoppe_de_doran"; 
         // Connexion à la base de données
-        $conn = new mysqli('localhost', 'root', '', 'Echoppe_De_Doran');
+        $conn = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 
+        
         // Vérifier la connexion
         if ($conn->connect_error) {
             die("La connexion a échoué: " . $conn->connect_error);
