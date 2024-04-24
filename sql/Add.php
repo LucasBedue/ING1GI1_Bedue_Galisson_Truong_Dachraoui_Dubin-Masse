@@ -6,6 +6,10 @@
     <title>Ajouter un élément</title>
     <?php
 			session_start();
+            if(!isset($_SESSION['role'])){
+                header("Location: ../php/deconnexion.php");
+                exit;
+            }
             if(isset($_SESSION['role'])){
 				if($_SESSION['role'] !== "Admin"){
 					header("Location: ../php/deconnexion.php");

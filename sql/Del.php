@@ -1,5 +1,15 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['role'])){
+    header("Location: ../php/deconnexion.php");
+    exit;
+}
+if(isset($_SESSION['role'])){
+    if($_SESSION['role'] !== "Admin"){
+        header("Location: ../php/deconnexion.php");
+        exit;
+    }
+}
 $response=array('success'=>false,'error'=>true,'successfix'=>false,'successDelete'=>false);
 
 $serveur = "localhost"; 
@@ -19,6 +29,8 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new_quantity"])) {
     // Récupération du nom de l'élément et de la nouvelle quantité
     $item_nom = $_POST['item_nom'];
+    $item_nom=mysqli_real_escape_string($conn, $item_nom);
+
     $new_quantity = $_POST['new_quantity'];
 
     // Requête pour mettre à jour le stock dans la base de données
@@ -38,6 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new_quantity"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_item_nom'])) {
     // Récupération du nom de l'élément à supprimer
     $item_nom = $_POST['delete_item_nom'];
+    $item_nom=mysqli_real_escape_string($conn, $item_nom);
+
     $sql_delete = "DELETE FROM item WHERE nom = '$item_nom'";
 
     if ($conn->query($sql_delete) === TRUE) {

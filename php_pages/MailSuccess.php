@@ -29,7 +29,7 @@
 			}
 			if(isset($_SESSION['role'])){
 				if($_SESSION['role'] == "Admin"){
-					echo "<a href=\"../sql/Add.php\">";
+					echo "<a href=\"../sql/Lire_Data.php\">";
 					echo "<div class=\"top_left_text\">Gérer stock</div></a>";
 
 				}
