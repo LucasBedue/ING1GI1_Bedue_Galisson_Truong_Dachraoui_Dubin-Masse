@@ -1,23 +1,3 @@
-function getXhr(){//To create an XHR object
-    var xhr = null; 
-if(window.XMLHttpRequest) // Firefox et autres
-xhr = new XMLHttpRequest(); 
-else if(window.ActiveXObject){ // Internet Explorer 
-try {
-xhr = new ActiveXObject("Msxml2.XMLHTTP");
-} catch (e) {
-xhr = new ActiveXObject("Microsoft.XMLHTTP");
-}
-}
-else { // XMLHttpRequest non supporté par le navigateur 
-alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest..."); 
-xhr = false; 
-} 
-    return xhr
-}
-
-
-
 
 function changeTheDiv(indicediv){
     var hiddenDiv = document.getElementById("hiddenDiv"+indicediv);
@@ -129,14 +109,7 @@ function AddToCart(indice){
     var errorfield=document.getElementById("messagefield"+indice);//the field containing the error message
 
 
-    /*
-    if(!(num==0)){
-        //var string=encodeURI("../php/ajoutPanier.php?nomItem="+encodeURIComponent(nomItem)+"&stockToAdd="+num);
-        //string=string.replace(/'/g, encodeURIComponent('%27'));
-        document.location.href="../php/ajoutPanier.php?nomItem="+nomItem+"&stockToAdd="+num;
-
-    }
-    */
+   
     if(num>stockmax){
         errorfield.innerHTML="<p>Commandez moins d'objets.</p>";
 

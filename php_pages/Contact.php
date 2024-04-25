@@ -27,14 +27,7 @@
 			// Records the current amount of time in the session
 			$_SESSION['last_activity'] = time();
 
-			/*
-			//if not already connected, kick you out
-			if (!isset($_SESSION['role']) || $_SESSION['role'] !== "Client") {
-				echo '<script>alert("Veuillez vous connecter pour accéder à cette page.");</script>';
-				echo '<script>window.location.href = "./Connexion.php";</script>';
-				exit();
-			}
-			*/
+			
 			
 			?>
 		<meta charset="UTF-8" />
@@ -44,32 +37,7 @@
 		<link rel="stylesheet" href="../css/Connexion.css" />
 		
 		<script type="text/javascript">
-/*
-$(document).ready(function(){
-    $("form").on("submit", function(event){
-        event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
 
-        // Récupérer les données du formulaire
-        var formData = $(this).serialize();
-
-        // Envoyer la requête Ajax
-        $.ajax({
-            type: "POST",
-            url: "../php/EnvoiContact.php",
-            data: formData,
-            success: function(response){
-                // Afficher la réponse du serveur
-                alert(response);
-            },
-            error: function(xhr, status, error){
-                // Gérer les erreurs
-                console.error(xhr.responseText);
-            }
-        });
-    });
-});
-
-*/
 		</script>	
 		
 	</head>

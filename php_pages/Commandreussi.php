@@ -26,14 +26,7 @@
 			// Records the current amount of time in the session
 			$_SESSION['last_activity'] = time();
 
-			/*
-			//if not already connected, kick you out
-			if (!isset($_SESSION['role']) || $_SESSION['role'] !== "Client") {
-				echo '<script>alert("Veuillez vous connecter pour accéder à cette page.");</script>';
-				echo '<script>window.location.href = "./Connexion.php";</script>';
-				exit();
-			}
-			*/
+			
 			
 			?>
 		<meta charset="UTF-8" />
