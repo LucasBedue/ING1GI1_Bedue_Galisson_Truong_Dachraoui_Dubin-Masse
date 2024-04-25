@@ -16,8 +16,8 @@ if (!$conn->query('CREATE DATABASE IF NOT EXISTS echoppe_de_doran')) {
 $conn->select_db('echoppe_de_doran');
 
 // Check if "item" table exists, create if not
-$result = $conn->query('DESCRIBE item');
-if ($result === FALSE && $conn->errno === 1146) { // Table does not exist
+$tableExists = $conn->query('SHOW TABLES LIKE "item"')->num_rows > 0;
+if (!$tableExists) {
     $createTable = $conn->query('CREATE TABLE item (
       nom varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
       prix int NOT NULL,
@@ -34,8 +34,11 @@ if ($result === FALSE && $conn->errno === 1146) { // Table does not exist
     }
 }
 
-// Read data from "item" table if it exists
-if ($result) {
+// Read data from "item" table
+$result = $conn->query('SELECT * FROM item');
+
+// Display data if table exists
+if ($result && $result->num_rows > 0) {
     // Afficher les données au format HTML
     echo "<table>";
     while ($row = $result->fetch_assoc()) { 
@@ -51,6 +54,8 @@ if ($result) {
         echo "</tr>";
     }
     echo "</table>";
+} else {
+    echo "La table 'item' est vide.";
 }
 
 // Close connection
